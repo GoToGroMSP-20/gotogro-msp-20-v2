@@ -16,7 +16,7 @@
     </li>
     <li>
       <a class="nav-item" href="/addMember.php">
-        <?php echo file_get_contents("../assets/icons/MdPersonAddAlt1.svg"); ?> Add Member
+        <?php echo file_get_contents("./assets/icons/MdPersonAddAlt1.svg"); ?> Add Member
       </a>
     </li>
     <li>
