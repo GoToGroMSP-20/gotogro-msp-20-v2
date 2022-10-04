@@ -1,15 +1,13 @@
-<?php
-echo 'PHP version: ' . phpversion();
-?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <link href="./styles/reset.css" rel="stylesheet" type="text/css"/>
-    <link href="./styles/global.css" rel="stylesheet" type="text/css"/>
+    <link href="./styles/styles.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/scripts/navbar.js"></script>
   </head>
   <body>
-    <div>
-      This is a page :D
-    </div>
+    <?php include_once ("nav.inc"); ?>
+    <main>
+      This is a page :DDDD
+    </main>
   </body>
 </html>
