@@ -1,0 +1,44 @@
+.navbar {
+  position: fixed;
+  height: 100vh;
+  width: fit-content;
+  background-color: var(--clr-secondary);
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  padding: 1.5rem 1.5rem 4rem 1.5rem;
+}
+
+.company-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.app-name {
+  color: var(--clr-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.logo path {
+  fill: var(--clr-primary);
+  width: 3rem;
+  height: 3rem;
+}
+
+.nav-item {
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  font-size: 1.125rem;
+  color: var(--clr-white);
+  border-left: 5px solid hsla(0, 0%, 0%, 0);
+}
+
+.nav-item > .active {
+  border-left: 5px solid var(--clr-primary);
+}
