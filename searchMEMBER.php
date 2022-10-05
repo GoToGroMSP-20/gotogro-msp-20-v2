@@ -53,6 +53,4 @@
     }else{
         header ("location: editMember.php");
         exit();
-    }    
-    
-?>
+    }
