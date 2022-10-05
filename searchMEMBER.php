@@ -17,7 +17,7 @@ if (isset($_POST["submit"])) {
             header("location: editMember.php?member_id=invalid");
             exit();
         }
-        //require_once ("settings.php"); // DB connection info
+        require_once("settings.php"); // DB connection info
 
         $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
         // check if connection is successful
