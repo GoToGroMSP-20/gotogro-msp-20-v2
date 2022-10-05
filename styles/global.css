@@ -1,19 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 
 /* Global styles to be used across the app */
 :root {
-  --clr-black: #0C0E0F;
-  --clr-white: #FFFFFF;
-  --clr-disabled: #ABB6BA;
+  --clr-black: #0c0e0f;
+  --clr-white: #ffffff;
+  --clr-disabled: #abb6ba;
   --clr-placeholder: #808080;
-  --clr-error: #E74C3C;
-  --clr-primary: #A0FF47;
-  --clr-primary_2: #75BD00;
-  --clr-primary_3: #395C00;
+  --clr-error: #e74c3c;
+  --clr-primary: #a0ff47;
+  --clr-primary_2: #75bd00;
+  --clr-primary_3: #395c00;
   --clr-secondary: #141819;
-  --clr-secondary_2: #21292C;
+  --clr-secondary_2: #21292c;
   --clr-secondary_3: #141819;
-  --clr-warning: #F7CD00;
+  --clr-warning: #f7cd00;
 
   font-size: 16px;
 }
@@ -32,15 +32,25 @@ h3 {
   padding-bottom: 0.5rem;
 }
 
-table, th, td, tr {
+table,
+th,
+td,
+tr {
   font-family: "Consolas";
   font-size: 1.125rem;
 }
 
-body, input, textarea, button {
+body,
+input,
+textarea,
+button {
   background-color: var(--clr-black);
   color: var(--clr-white);
-  font-family: 'Inter', 'sans-serif';
+  font-family: "Inter", "sans-serif";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  margin-left: 13.5rem;
 }
