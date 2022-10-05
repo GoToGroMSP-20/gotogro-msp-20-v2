@@ -67,7 +67,6 @@ if (isset($_POST["submit"])) {
         exit();
     }
 
-
     require_once("settings.php"); // DB connection info
 
     $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
