@@ -1,55 +1,100 @@
 <?php
-    function sanitise_input($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-    
-    if (isset($_POST["submit"])){
-        
-        if (isset ($_POST["member_id"]) && !empty ($_POST["member_id"])){
-            $member_id = $_POST["member_id"];
-            $member_id = sanitise_input($member_id);
-            //echo "<p> Member ID : $member_id</p>";
-            if ((!preg_match("/^[\d]{10}$/",$member_id)) && (!filter_var($member_id, FILTER_VALIDATE_EMAIL))) {
-                header ("location: index.php?member_id=invalid");
-                exit();
-            }
-            //require_once ("settings.php"); // DB connection info
+function sanitise_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
 
-            $conn = @mysqli_connect($host,$user,$pwd,$sql_db);
-            // check if connection is successful
-            if (!$conn){
-                // Display error msg
-                echo "<p>Database connection failure </p>";
-                header ("location: index.php");
-                exit();
-            }else{
-                $query = "INSERT INTO Member (lastName, firstName, dob, email, mobile) VALUES('$lastName','$firstName','$dob','$email','$mobile');";
+if (isset($_POST["submit"])) {
 
-                $insert_result = mysqli_query($conn, $query);
-                $last_id = $conn->insert_id;
-
-                // checks if the execution was successful
-                if (!$insert_result){
-                echo "<p>Something is wrong with ", $query,"</p>";
-                header ("location: index.php");
-                exit ();
-                }
-                // close the database connection
-                mysqli_close($conn);
-            }
-            header ("location: index.php?form=$last_id");
-            exit();
-
-        }else{
-            header ("location: index.php?member_id=empty");
+    if (isset($_POST["fname"]) && !empty($_POST["fname"])) {
+        $fname = $_POST["fname"];
+        $fname = sanitise_input($fname);
+        //echo "<p> First Name: $fname</p>";
+        if (!preg_match("/^[A-Za-z]{1,20}$/", $fname)) {
+            header("location: addMember.php?fname=invalid");
             exit();
         }
-    }else{
-        header ("location: index.php");
+    } else {
+        header("location: addMember.php?fname=empty");
         exit();
-    }    
-    
-?>
+    }
+
+    if (isset($_POST["lname"]) && !empty($_POST["lname"])) {
+        $lname = $_POST["lname"];
+        $lname = sanitise_input($lname);
+        //echo "<p> Last Name: $lname</p>";
+        if (!preg_match("/^[A-Za-z]{1,20}$/", $lname)) {
+            header("location: addMember.php?lname=invalid");
+            exit();
+        }
+    } else {
+        header("location: addMember.php?lname=empty");
+        exit();
+    }
+    if (isset($_POST["date"]) && !empty($_POST["date"])) {
+        $dob = $_POST["date"];
+        $dob = sanitise_input($dob);
+        //echo "<p> DOB: $dob</p>";
+    } else {
+        header("location: addMember.php?dob=empty");
+        exit();
+    }
+    if (isset($_POST["email"]) && !empty($_POST["email"])) {
+        $email = $_POST["email"];
+        $email = sanitise_input($email);
+        //echo "<p> Email: $email</p>";
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            header("location: addMember.php?email=invalid");
+            exit();
+        }
+    } else {
+        header("location: addMember.php?email=empty");
+        exit();
+    }
+    if (isset($_POST["mnumber"]) && !empty($_POST["mnumber"])) {
+        $phone = $_POST["mnumber"];
+        $phone = sanitise_input($phone);
+        //echo "<p> Phone No: $phone</p>";
+        if (!preg_match("/^[\d]{10}$/", $phone)) {
+            header("location: addMember.php?phone=invalid");
+            exit();
+        }
+    } else {
+        header("location: addMember.php?phone=empty");
+        exit();
+    }
+
+
+    require_once("settings.php"); // DB connection info
+
+    $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
+    // check if connection is successful
+    if (!$conn) {
+        // Display error msg
+        echo "<p>Database connection failure </p>";
+        header("location: addMember.php?db=invalid");
+        exit();
+    } else {
+        $query = "INSERT INTO Member (firstName,lastName, dob, email, mobile) VALUES('$fname','$lname','$dob','$email','$phone');";
+
+        $insert_result = mysqli_query($conn, $query);
+        $last_id = $conn->insert_id;
+
+        // checks if the execution was successful
+        if (!$insert_result) {
+            echo "<p>Something is wrong with ", $query, "</p>";
+            header("location: addMember.php?db=query");
+            exit();
+        }
+        // close the database connection
+        mysqli_close($conn);
+    }
+    header("location: addMember.php?form=$last_id");
+    exit();
+} else {
+    header("location: addMember.php");
+    exit();
+}
