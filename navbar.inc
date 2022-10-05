@@ -10,23 +10,27 @@
   </div>
   <ul>
     <li>
-      <a class="nav-item" href="/addOrder.php">
-        <?php echo file_get_contents("./assets/icons/FaCashRegister.svg"); ?> Add Order
+      <a class="nav-item" href="/index.php">
+        <?php echo file_get_contents("./assets/icons/FaCashRegister.svg"); ?>
+        Add Order
       </a>
     </li>
     <li>
       <a class="nav-item" href="/addMember.php">
-        <?php echo file_get_contents("./assets/icons/MdPersonAddAlt1.svg"); ?> Add Member
+        <?php echo file_get_contents("./assets/icons/MdPersonAddAlt1.svg"); ?>
+        Add Member
       </a>
     </li>
     <li>
       <a class="nav-item" href="/memberInfo.php">
-        <?php echo file_get_contents("./assets/icons/MdPersonSearch.svg"); ?> Member Info
+        <?php echo file_get_contents("./assets/icons/MdPersonSearch.svg"); ?>
+        Member Info
       </a>
     </li>
     <li>
       <a class="nav-item" href="/salesReport.php">
-        <?php echo file_get_contents("./assets/icons/RiFileList3Fill.svg"); ?> Sales Report
+        <?php echo file_get_contents("./assets/icons/RiFileList3Fill.svg"); ?>
+        Sales Report
       </a>
     </li>
   </ul>
