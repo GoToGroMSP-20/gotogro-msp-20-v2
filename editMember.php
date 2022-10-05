@@ -15,10 +15,10 @@
 <body>
     <?php
   // NAV BAR
-  //include_once ("navbar.inc");
+  include_once("navbar.inc");
   ?>
-    <div className="editmember">
-        <h1 className="white-text">Search for member </h1>
+    <div class="editmember">
+        <h1 class="white-text">Search for member </h1>
         <form method="post" action="searchMEMBER.php" novalidate="novalidate">
             <div class="inputField">
                 <!-- <label for="member_id">Search for member </label>-->
