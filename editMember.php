@@ -8,15 +8,14 @@
     <!-- CSS & Js Sheets -->
     <link href="styles/styles.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="scripts/searchmember.js"></script>
-    <!-- <link rel="icon" href="./assets/icons/SiOverleaf.svg" type="image/icon" />-->
+    <link rel="icon" href="./assets/icons/SiOverleaf.svg" type="image/icon" />
     <title>GoToGro | Edit Member</title>
 </head>
 
 <body>
     <?php
-  // NAV BAR
-  include_once("navbar.inc");
-  ?>
+    include_once("navbar.inc");
+    ?>
     <div class="editmember">
         <h1 class="white-text">Search for member </h1>
         <form method="post" action="searchMEMBER.php" novalidate="novalidate">
@@ -28,6 +27,7 @@
                 <br>
             </div>
         </form>
+    </div>
 </body>
 
 </html>
