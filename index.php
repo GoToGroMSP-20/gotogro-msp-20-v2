@@ -20,8 +20,8 @@
         <form method="post" action="processORDER.php" novalidate="novalidate">
             <div id="row_1">
                 <div class="inputField">
-                    <label for="product_ID">Product ID</label>
-                    <select name="product_ID" id="product_ID">
+                    <label for="product_ID1">Product ID</label>
+                    <select name="product_ID1" id="product_ID1">
                         <option value="placeholder" hidden>Please Select</option>
                         <option value="Milk">Milk</option>
                         <option value="KitKat">KitKat</option>
@@ -31,20 +31,20 @@
                     </select>
                 </div>
                 <div class="inputField">
-                    <label for="quantity">Quantity </label>
-                    <input type="number" name="quantity" id="quantity1" required="required" onblur="show_total()" />
+                    <label for="quantity1">Quantity </label>
+                    <input type="number" name="quantity1" id="quantity1" required="required" onblur="show_total()" />
                 </div>
                 <div class="inputField">
-                    <label for="price">Price </label>
-                    <input type="number" name="price" id="price1" required="required"
+                    <label for="price1">Price </label>
+                    <input type="number" name="price1" id="price1" required="required"
                         onblur="show_total(); show_row2();" />
                     <br>
                 </div>
             </div>
             <div id="row_2">
                 <div class="inputField">
-                    <label for="product_ID">Product ID</label>
-                    <select name="product_ID" id="product_ID">
+                    <label for="product_ID2">Product ID</label>
+                    <select name="product_ID2" id="product_ID2">
                         <option value="placeholder" hidden>Please Select</option>
                         <option value="Milk">Milk</option>
                         <option value="KitKat">KitKat</option>
@@ -54,12 +54,12 @@
                     </select>
                 </div>
                 <div class="inputField">
-                    <label for="quantity">Quantity </label>
-                    <input type="number" name="quantity" id="quantity2" onblur="show_total()" />
+                    <label for="quantity2">Quantity </label>
+                    <input type="number" name="quantity2" id="quantity2" onblur="show_total()" />
                 </div>
                 <div class="inputField">
-                    <label for="price">Price </label>
-                    <input type="number" name="price" id="price2" onblur="show_total()" />
+                    <label for="price2">Price </label>
+                    <input type="number" name="price2" id="price2" onblur="show_total()" />
                     <br>
                 </div>
             </div>
