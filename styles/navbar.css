@@ -39,6 +39,6 @@
   border-left: 5px solid hsla(0, 0%, 0%, 0);
 }
 
-.nav-item > .active {
+.nav-item.active {
   border-left: 5px solid var(--clr-primary);
 }
