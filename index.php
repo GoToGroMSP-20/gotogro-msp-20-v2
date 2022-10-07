@@ -17,7 +17,7 @@
     ?>
     <div class="addorder">
         <h1 class="white-text">Add New Order</h1>
-        <form method="post" action="processORDER.php">
+        <form method="post" action="processORDER.php" id="form" id="apply">
             <div id="row_1">
                 <div class="inputField">
                     <label for="product_ID1">Product ID</label>
@@ -79,16 +79,31 @@
                     <label id="total_price"></label>
                     <br>
                     <label for="member_id">Member ID</label>
-                    <input type="text" minlength="10" validationState="1" name="member_id"
+                    <input type="text" name="member_id" minlength="10"
                         placeholder=" Enter member's email or mobile number" id="member_id" required="required" />
+                    <span id=member_error></span>
                     <br>
                 </div>
             </div>
             <div class="inputField">
-                <button class="button" buttonType="primary" type="submit" name="submit">Add Order</button>
+                <button class="button" buttonType="primary" type="submit" name="submit" id="submit"
+                    onclick="validate()">Add Order</button>
                 <br>
             </div>
         </form>
 </body>
+<?php
+if (isset($_GET['member_id']) && !empty($_GET["member_id"])) {
+    $member_id = $_GET['member_id'];
+    //echo $member_id;
+    if ($member_id == "empty" ||  $member_id == "invalid") {
+        echo "<script>document.getElementById('row_3').classList.add('invalid');
+        document.getElementById('member_error').innerText = 'Invalid Member ID';</script>";
+    } else if ($member_id == "valid") {
+        echo "<script>document.getElementById('row_3').classList.add('valid');
+        document.getElementById('member_error').innerText = 'Valid Member ID';</script>";
+    }
+}
+?>
 
 </html>

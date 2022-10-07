@@ -12,18 +12,6 @@
   line-height: 19px;
 }
 
-.inputField[validationState="0"] label {
-  color: var(--clr-white);
-}
-
-.inputField[validationState="1"] label {
-  color: var(--clr-primary);
-}
-
-.inputField[validationState="-1"] label {
-  color: var(--clr-error);
-}
-
 .inputField input,
 .inputField select,
 #amount1,
@@ -39,36 +27,33 @@
   border-radius: 7px;
 }
 
-.inputField[validationState="0"] input {
-  border: 2px solid var(--clr-white);
+.inputField span {
+  visibility: hidden;
+  font-size: 0.75rem;
 }
 
-.inputField[validationState="1"] input {
+.valid span {
+  visibility: visible;
+  color: var(--clr-primary);
+}
+
+.invalid span {
+  visibility: visible;
+  color: var(--clr-error);
+}
+
+.valid input,
+.valid select {
   border: 2px solid var(--clr-primary);
 }
 
-.inputField[validationState="-1"] input {
+.invalid input,
+.invalid select {
   border: 2px solid var(--clr-error);
 }
 
 .inputField::placeholder {
   color: var(--clr-placeholder);
-}
-
-.inputField span {
-  font-size: 0.75rem;
-}
-
-.inputField[validationState="0"] span {
-  visibility: hidden;
-}
-
-.inputField[validationState="1"] span {
-  color: var(--clr-primary);
-}
-
-.inputField[validationState="-1"] span {
-  color: var(--clr-error);
 }
 
 /* Add Input Field */
