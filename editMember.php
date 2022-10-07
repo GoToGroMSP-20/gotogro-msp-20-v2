@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<?php include_once("navbar.inc"); ?>
+  <?php include_once("navbar.inc"); ?>
 
   <main>
     <form method="post" action="processMEMBER.php" novalidate="novalidate" class="editMemberform">
@@ -53,7 +53,7 @@
 
 
     </form>
-</main>
+  </main>
 </body>
 <script type="text/javascript" src="/scripts/navbar.js"></script>
 
