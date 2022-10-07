@@ -1,209 +1,114 @@
-#editMemberform {
+.editMemberform {
+    padding-left: 145px;
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+  
+  .editFormInput label,
+  input {
+    display: block;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="email"],
+  input[type="tel"]
+   {
+    width: 576px;
+    height: 43px;
+    padding: 12px 16px;
+    align-items: center;
+    margin: 8px 0;
+    border: 2px solid var(--clr-white);
+    border-radius: 7px;
+    gap: 10px;
+    box-sizing: border-box;
+  }
+  
+  .button {
+    color: var(--clr-white);
+    padding: 12px 0;
+    border-radius: 7px;
+    font-weight: 600;
+    align-self: flex-end;
+    gap: 10px;
+    border: none;
+    width: 148px;
+    height: 43px;
 
-    margin-left: 145px;
-    margin-top: 48px;
-      
-}
+    
+  }
+  
+  .button[buttonType="primary"] {
+    background-color: var(--clr-primary_2);
+    
+  }
+  
+  .button[buttonType="secondary"] {
+    color: var(--clr-primary);
+    border: 2px solid var(--clr-primary);
+    background-color: hsla(0, 0%, 0%, 0);
+    
+  }
+  
+  .button[disabled] {
+    color: var(--clr-placeholder);
+    background-color: var(--clr-disabled);
+  }
+  
+  .button[buttonType="primary"]:hover,
+  .button[buttonType="secondary"]:hover {
+    cursor: pointer;
+    background-color: var(--clr-primary_3);
+    
+  }
+  
+  .button[disabled]:hover {
+    cursor: not-allowed;
+  }
 
-body{
-    background-color: black;
-}
+  .buttonCancel {
+    color: var(--clr-white);
+    padding: 12px 0; 
+    border-radius: 7px;
+    font-weight: 600;
+    border: none;
+    width: 148px;
+    height: 43px;
+    margin: 0 auto;
+    transform: translate(16%, -60%);
+  }
+  
+  .buttonCancel[buttonType="primary"] {
+    background-color: var(--clr-primary_2);
+    
+  }
+  
+  .buttonCancel[buttonType="secondary"] {
+    color: var(--clr-primary);
+    border: 2px solid var(--clr-primary);
+    background-color: hsla(0, 0%, 0%, 0);
+    
+  }
+  
+  .buttonCancel[disabled] {
+    color: var(--clr-placeholder);
+    background-color: var(--clr-disabled);
+  }
+  
+  .buttonCancel[buttonType="primary"]:hover,
+  .buttonCancel[buttonType="secondary"]:hover {
+    cursor: pointer;
+    background-color: var(--clr-primary_3);
+    
+  }
+  
+  .buttonCancel[disabled]:hover {
+    cursor: not-allowed;
+  }
 
-h2 {
+  
 
-width: 198px;
-height: 29px;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 24px;
-color: #FFFFFF;
-
-}
-
-#fName {
-
-width: 83px;
-height: 19px;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-color: #FFFFFF;
-
-}
-
-#firstname{
-
-box-sizing: border-box;
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 12px 16px;
-gap: 10px;
-width: 600px;
-height: 43px;
-border: 2px solid #FFFFFF;
-border-radius: 7px;
-
-}
-
-#lName{
-
-width: 82px;
-height: 19px;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-color: #FFFFFF;
-
-}
-
-#lastname{
-
-box-sizing: border-box;
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 12px 16px;
-gap: 10px;
-width: 600px;
-height: 43px;
-border: 2px solid #FFFFFF;
-border-radius: 7px;
-
-}
-
-#dob{
-
-width: 97px;
-height: 19px;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-color: #FFFFFF;
-
-}
-
-#dateofbirth{
-
-box-sizing: border-box;
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 12px 16px;
-gap: 10px;   
-width: 600px;
-height: 43px;   
-border: 2px solid #FFFFFF;
-border-radius: 7px;
-}
-
-#em{
-
-width: 41px;
-height: 19px;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-color: #FFFFFF;
-
-}
-
-#email{
-
-box-sizing: border-box;
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 12px 16px;
-gap: 10px;
-width: 600px;
-height: 43px;
-border: 2px solid #FFFFFF;
-border-radius: 7px;
-
-}
-
-#mobilenum{
-
-width: 198px;
-height: 19px;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-color: #FFFFFF;
-
-}
-
-#phonenum{
-
-box-sizing: border-box;
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 12px 16px;
-gap: 10px;
-width: 600px;
-height: 43px;
-border: 2px solid #FFFFFF;
-border-radius: 7px;
-
-}
-
-#sub{
-
-width: 96px;
-height: 19px;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-color: #FFFFFF;
-
-}
-
-#button{
-
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 12px 24px;
-gap: 10px;
-width: 144px;
-height: 43px;
-background: #75BD00;
-border-radius: 7px;
-
-}
-
-#cancel{
-
-width: 54px;
-height: 19px;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-color: #A0FF47;
-
-}
-
-#cancelButton{
-
-box-sizing: border-box;
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 12px 24px;
-gap: 10px;
-width: 102px;
-height: 43px;
-border: 2px solid #A0FF47;
-border-radius: 7px;
-
-}
+ 
