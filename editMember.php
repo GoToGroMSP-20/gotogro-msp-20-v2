@@ -17,14 +17,16 @@
     include_once("navbar.inc");
     ?>
     <div class="editmember">
-        <h1 class="white-text">Search for member </h1>
+        <!-- <h1 class="white-text">Search for member </h1>-->
         <form method="post" action="searchMEMBER.php" novalidate="novalidate">
             <div class="inputField">
-                <!-- <label for="member_id">Search for member </label>-->
-                <input type="text" name="member_id" id="member_id" required="required"
-                    placeholder="Enter member's email or mobile number" onblur="member_valid();" />
-                <button class="button" buttonType="primary" type="submit" name="submit">Search </button>
+                <label for="member_id">Search for member </label>
                 <br>
+                <div id="emember">
+                    <input type="text" name="member_id" id="member_id" required="required"
+                        placeholder="Enter member's email or mobile number" onblur="member_valid();" />
+                    <button class="button" buttonType="primary" type="submit" name="submit">Search </button>
+                </div>
             </div>
         </form>
     </div>
