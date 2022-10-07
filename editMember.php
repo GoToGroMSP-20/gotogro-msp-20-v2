@@ -25,11 +25,26 @@
                 <div id="emember">
                     <input type="text" name="member_id" id="member_id" required="required"
                         placeholder="Enter member's email or mobile number" onblur="member_valid();" />
-                    <button class="button" buttonType="primary" type="submit" name="submit">Search </button>
+
+                    <button class="button" buttonType="primary" type="submit" name="submit" id="submit">Search </button>
+                    <span id=member_error></span>
                 </div>
             </div>
         </form>
     </div>
 </body>
+<?php
+if (isset($_GET['member_id']) && !empty($_GET["member_id"])) {
+    $member_id = $_GET['member_id'];
+    //echo $member_id;
+    if ($member_id == "empty" ||  $member_id == "invalid") {
+        echo "<script>document.getElementById('emember').classList.add('invalid');
+        document.getElementById('member_error').innerText = 'Invalid Member ID';</script>";
+    } else if ($member_id == "valid") {
+        echo "<script>document.getElementById('emember').classList.add('valid');
+        document.getElementById('member_error').innerText = 'Valid Member ID';</script>";
+    }
+}
+?>
 
 </html>
