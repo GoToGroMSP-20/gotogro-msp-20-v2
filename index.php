@@ -17,83 +17,80 @@
     ?>
     <div class="addorder">
         <h1 class="white-text">Add New Order</h1>
-        <<<<<<< HEAD <form method="post" action="processORDER.php">
-            =======
-            <form method="post" action="processORDER.php" id="form" id="apply">
-                >>>>>>> 788184f2a5153c1541908c3ac21a32993922d05c
-                <div id="row_1">
-                    <div class="inputField">
-                        <label for="product_ID1">Product ID</label>
-                        <select name="product_ID1" id="product_ID1">
-                            <option value="placeholder" hidden>Please Select</option>
-                            <option value="Milk">Milk</option>
-                            <option value="KitKat">KitKat</option>
-                            <option value="Milo">Milo</option>
-                            <option value="Cheese">Cheese</option>
-                            <option value="Ice Cream">Ice Cream</option>
-                        </select>
-                    </div>
-                    <div class="inputField">
-                        <label for="quantity1">Quantity </label>
-                        <input type="number" min="1" max="100" name="quantity1" id="quantity1" required="required"
-                            onblur="show_total()" />
-                    </div>
-                    <div class="inputField">
-                        <label for="price1">Price </label>
-                        <input type="number" min="1" max="100" name="price1" id="price1" required="required"
-                            onblur="show_total();" />
-                        <br>
-                    </div>
-                    <div class="inputField">
-                        <label>Amount </label>
-                        <label id="amount1">$0.00</label>
-                        <br>
-                    </div>
-                </div>
-                <div id="row_2">
-                    <div class="inputField">
-                        <label for="product_ID2">Product ID</label>
-                        <select name="product_ID2" id="product_ID2">
-                            <option value="placeholder" hidden>Please Select</option>
-                            <option value="Milk">Milk</option>
-                            <option value="KitKat">KitKat</option>
-                            <option value="Milo">Milo</option>
-                            <option value="Cheese">Cheese</option>
-                            <option value="Ice Cream">Ice Cream</option>
-                        </select>
-                    </div>
-                    <div class="inputField">
-                        <label for="quantity2">Quantity </label>
-                        <input type="number" min="1" max="100" name="quantity2" id="quantity2" onblur="show_total()" />
-                    </div>
-                    <div class="inputField">
-                        <label for="price2">Price </label>
-                        <input type="number" min="1" max="100" name="price2" id="price2" onblur="show_total()" />
-                        <br>
-                    </div>
-                    <div class="inputField">
-                        <label>Amount </label>
-                        <label id="amount2">$0.00</label>
-                        <br>
-                    </div>
-                </div>
-                <div id="row_3">
-                    <div class="inputField">
-                        <label id="total_price"></label>
-                        <br>
-                        <label for="member_id">Member ID</label>
-                        <input type="text" name="member_id" minlength="10"
-                            placeholder=" Enter member's email or mobile number" id="member_id" required="required" />
-                        <span id=member_error></span>
-                        <br>
-                    </div>
+        <form method="post" action="processORDER.php" id="form" id="apply">
+            <div id="row_1">
+                <div class="inputField">
+                    <label for="product_ID1">Product ID</label>
+                    <select name="product_ID1" id="product_ID1">
+                        <option value="placeholder" hidden>Please Select</option>
+                        <option value="Milk">Milk</option>
+                        <option value="KitKat">KitKat</option>
+                        <option value="Milo">Milo</option>
+                        <option value="Cheese">Cheese</option>
+                        <option value="Ice Cream">Ice Cream</option>
+                    </select>
                 </div>
                 <div class="inputField">
-                    <button class="button" buttonType="primary" type="submit" name="submit" onclick="validate()">Add
-                        Order</button>
+                    <label for="quantity1">Quantity </label>
+                    <input type="number" min="1" max="100" name="quantity1" id="quantity1" required="required"
+                        onblur="show_total()" />
+                </div>
+                <div class="inputField">
+                    <label for="price1">Price </label>
+                    <input type="number" min="1" max="100" name="price1" id="price1" required="required"
+                        onblur="show_total();" />
                     <br>
                 </div>
-            </form>
+                <div class="inputField">
+                    <label>Amount </label>
+                    <label id="amount1">$0.00</label>
+                    <br>
+                </div>
+            </div>
+            <div id="row_2">
+                <div class="inputField">
+                    <label for="product_ID2">Product ID</label>
+                    <select name="product_ID2" id="product_ID2">
+                        <option value="placeholder" hidden>Please Select</option>
+                        <option value="Milk">Milk</option>
+                        <option value="KitKat">KitKat</option>
+                        <option value="Milo">Milo</option>
+                        <option value="Cheese">Cheese</option>
+                        <option value="Ice Cream">Ice Cream</option>
+                    </select>
+                </div>
+                <div class="inputField">
+                    <label for="quantity2">Quantity </label>
+                    <input type="number" min="1" max="100" name="quantity2" id="quantity2" onblur="show_total()" />
+                </div>
+                <div class="inputField">
+                    <label for="price2">Price </label>
+                    <input type="number" min="1" max="100" name="price2" id="price2" onblur="show_total()" />
+                    <br>
+                </div>
+                <div class="inputField">
+                    <label>Amount </label>
+                    <label id="amount2">$0.00</label>
+                    <br>
+                </div>
+            </div>
+            <div id="row_3">
+                <div class="inputField">
+                    <label id="total_price"></label>
+                    <br>
+                    <label for="member_id">Member ID</label>
+                    <input type="text" name="member_id" minlength="10"
+                        placeholder=" Enter member's email or mobile number" id="member_id" required="required" />
+                    <span id=member_error></span>
+                    <br>
+                </div>
+            </div>
+            <div class="inputField">
+                <button class="button" buttonType="primary" type="submit" name="submit" onclick="validate()">Add
+                    Order</button>
+                <br>
+            </div>
+        </form>
 </body>
 <?php
 if (isset($_GET['member_id']) && !empty($_GET["member_id"])) {
