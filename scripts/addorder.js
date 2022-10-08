@@ -1,3 +1,4 @@
+
 function show_total() {
   var r1_price = document.getElementById("price1").value.trim();
   var r1_qty = document.getElementById("quantity1").value.trim();
