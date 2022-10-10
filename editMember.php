@@ -3,6 +3,8 @@
 
 <head>
   <link href="./styles/styles.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="assets/icons/SiOverleaf.svg" type="image/icon" />
+  <title>GoToGro | Edit Member</title>
 </head>
 
 <body>
@@ -44,11 +46,11 @@
 
 
       <div class="button">
-        <button class="button" id=button buttonType="primary" type="submit" name="submit">Save Details</button>
+        <button class="button" id=button1 buttonType="primary" type="submit" name="submit">Save Details</button>
       </div>
 
       <div class="buttonCancel">
-        <button class="buttonCancel" id=button buttonType="secondary" type="reset" name="cancel">Cancel</button>
+        <button class="buttonCancel" id=button1 buttonType="secondary" type="reset" name="cancel">Cancel</button>
       </div>
 
 
