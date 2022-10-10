@@ -7,14 +7,11 @@
 }
 
 .editFormInput label,
-input {
+.editFormInput input {
   display: block;
 }
 
-input[type="text"],
-input[type="date"],
-input[type="email"],
-input[type="tel"] {
+.editFormInput input {
   width: 576px;
   height: 43px;
   padding: 12px 16px;
@@ -26,7 +23,7 @@ input[type="tel"] {
   box-sizing: border-box;
 }
 
-.button {
+.button1 {
   color: var(--clr-white);
   padding: 12px 0;
   border-radius: 7px;
