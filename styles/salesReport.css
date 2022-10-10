@@ -1,1 +1,38 @@
 /* salesReport.CSS */
+
+.salesReport {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: absolute;
+    left: 360px;
+    top: 48px;
+}
+
+.salesReport table {
+    display: block;
+}
+
+.salesReport thead {
+    background: var(--clr-secondary_2);
+    border-bottom: 2px solid var(--clr-white);
+}
+
+.salesReport tbody {
+    background: var(--clr-secondary_3);
+}
+
+.salesReport th, td {
+    padding: 12px 16px;
+    gap: 10px;
+    width: 217px;
+}
+
+.salesReport p, th, td {
+    color: var(--clr-white);
+    font-family: "Inter", "sans-serif";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: left;
+}
+
