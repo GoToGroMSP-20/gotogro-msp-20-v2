@@ -11,6 +11,17 @@
 </head>
 
 <body>
+
+    <!-- Error dialog -->
+    <dialog class="error">
+        <div class="popup-status">
+            <?php echo file_get_contents("./assets/icons/FaTimesCircle.svg"); ?>
+            <p>Oops! Something broke from our end. Please contact our technicians for support (Error code: 500)</p>
+            <button class="button" onclick="location.href = '/addOrder.php';" buttonType="primary" type="submit" name="submit">Back to Add Order</button>
+        </div>
+    </dialog>
+
+
     <?php include_once("navbar.inc"); ?>
     <main>
         <div class="salesReport">
@@ -19,7 +30,7 @@
                 require_once("settings.php"); 
                 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
                 if(!$conn) {
-                    echo "<p class='errorMsg'>Database connection failure</p>";
+                    echo "<script type='text/javascript' src='./scripts/salesreportdialog.js'></script>";
                     exit();
                 } else {
                     $sql_table = "MemberOrder";
@@ -30,10 +41,10 @@
                                     ORDER BY productName";
                     $user_result = mysqli_query($conn, $user_query);       
                     if(!$user_result) {
-                        echo "<p class='errorMsg'>Query error</p>";
+                        echo "<script type='text/javascript' src='./scripts/salesreportdialog.js'></script>";
                         exit();
                     } else if(mysqli_num_rows($user_result) == 0) {
-                        echo "<p class='errorMsg'>No records found</p>";
+                        echo "<script type='text/javascript' src='./scripts/salesreportdialog.js'></script>";
                         exit();
                     } else {
                         echo             
@@ -62,14 +73,14 @@
                         </table>";
                     }                    
                 }
-            ?>
-            <?php mysql_close($con);?>
-            <button type="button">Export to</button>
+            ?>  
+        <button class="button" id=button buttonType="primary" type="button" name="button">Export to .CSV</button>
+        <?php mysql_close($con);?>
         </div>
     </main>
 </body>
 
-<script type="text/javascript" src="/scripts/navbar.js"></script>
+<script type="text/javascript" src="./scripts/navbar.js"></script>
 
 </html>
 
