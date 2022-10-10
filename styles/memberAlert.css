@@ -1,0 +1,16 @@
+.alert {
+    display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 32px 128px;
+position: absolute;
+width: 450px;
+height: 278px;
+left: 20px;
+top: 20px;
+color: var(---clr-secondary_2);
+border-radius: 10px;
+  }
+
+  
