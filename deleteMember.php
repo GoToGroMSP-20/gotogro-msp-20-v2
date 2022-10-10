@@ -15,7 +15,7 @@
          $member_id = sanitise_input($member_id);
          //echo "<p> Member ID : $member_id</p>";
          if ((!filter_var($member_id, FILTER_VALIDATE_EMAIL))) {
-             //header("location: addMember.php?member_id=invalid"); 
+             //header("location: memberInfo.php?member_id=invalid"); 
              exit();
          }
          require_once("settings.php"); // DB connection info
@@ -25,7 +25,7 @@
          if (!$conn) {
              // Display error msg
              echo "<p>Database connection failure </p>";
-             //header("location: addMember.php");
+             //header("location: memberInfo.php");
              exit();
          } else {
              // Upon successful connection
@@ -37,12 +37,12 @@
              if (!$row) {
                  //echo User fail to delete
                  echo "<p class='manage_error'>User failed to be Deleted</p>";
-                 //header("location: addMember.php?member_id=valid");
+                 //header("location: memberInfo.php?member_id=valid");
                  exit();
              } else {
                  //echo User deleted
                  echo "<p class='manage_error'>User Deleted</p>";
-                 //header("location: addMember.php?member_id=invalid");
+                 //header("location: memberInfo.php?member_id=invalid");
                  exit();
              }
          }
