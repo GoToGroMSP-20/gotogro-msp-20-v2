@@ -12,7 +12,7 @@
     <dialog class="success">
       <div class="popup-status">
         <?php echo file_get_contents("./assets/icons/FaCheckCircle.svg"); ?>
-        <p>Added Membership Successful</p>
+        <p>Successfully added member.</p>
       <button class="button" onclick="location.href = '/addOrder.php';" buttonType="primary" type="submit" name="submit">Add an Order</button>
       </div>
     </dialog>
