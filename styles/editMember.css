@@ -23,7 +23,7 @@
   box-sizing: border-box;
 }
 
-.button1 {
+.button1{
   color: var(--clr-white);
   padding: 12px 0;
   border-radius: 7px;
@@ -35,64 +35,6 @@
   height: 43px;
 }
 
-.button[buttonType="primary"] {
-  background-color: var(--clr-primary_2);
-}
-
-.button[buttonType="secondary"] {
-  color: var(--clr-primary);
-  border: 2px solid var(--clr-primary);
-  background-color: hsla(0, 0%, 0%, 0);
-}
-
-.button[disabled] {
-  color: var(--clr-placeholder);
-  background-color: var(--clr-disabled);
-}
-
-.button[buttonType="primary"]:hover,
-.button[buttonType="secondary"]:hover {
-  cursor: pointer;
-  background-color: var(--clr-primary_3);
-}
-
-.button[disabled]:hover {
-  cursor: not-allowed;
-}
-
-.buttonCancel {
-  color: var(--clr-white);
-  padding: 12px 0;
-  border-radius: 7px;
-  font-weight: 600;
-  border: none;
-  width: 148px;
-  height: 43px;
-  margin: 0 auto;
-  transform: translate(16%, -60%);
-}
-
-.buttonCancel[buttonType="primary"] {
-  background-color: var(--clr-primary_2);
-}
-
-.buttonCancel[buttonType="secondary"] {
-  color: var(--clr-primary);
-  border: 2px solid var(--clr-primary);
-  background-color: hsla(0, 0%, 0%, 0);
-}
-
-.buttonCancel[disabled] {
-  color: var(--clr-placeholder);
-  background-color: var(--clr-disabled);
-}
-
-.buttonCancel[buttonType="primary"]:hover,
-.buttonCancel[buttonType="secondary"]:hover {
-  cursor: pointer;
-  background-color: var(--clr-primary_3);
-}
-
-.buttonCancel[disabled]:hover {
-  cursor: not-allowed;
+.button2{
+  transform: translate(45%, -127%);
 }
