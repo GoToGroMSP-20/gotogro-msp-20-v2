@@ -45,12 +45,12 @@
 
 
 
-      <div class="button">
+      <div class="button1">
         <button class="button" id=button1 buttonType="primary" type="submit" name="submit">Save Details</button>
       </div>
 
-      <div class="buttonCancel">
-        <button class="buttonCancel" id=button1 buttonType="secondary" type="reset" name="cancel">Cancel</button>
+      <div class="button2">
+        <button class="button" id=button2 buttonType="secondary" type="reset" name="cancel">Cancel</button>
       </div>
 
 
