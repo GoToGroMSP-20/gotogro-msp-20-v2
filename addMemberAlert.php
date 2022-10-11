@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <link href="./styles/styles.css" rel="stylesheet" type="text/css" />
 </head>
@@ -12,7 +11,7 @@
     <dialog class="success">
       <div class="popup-status">
         <?php echo file_get_contents("./assets/icons/FaCheckCircle.svg"); ?>
-        <p>Successfully added member.</p>
+        <p>Successfully Added member.</p>
       <button class="button" onclick="location.href = '/addOrder.php';" buttonType="primary" type="submit" name="submit">Add an Order</button>
       </div>
     </dialog>
