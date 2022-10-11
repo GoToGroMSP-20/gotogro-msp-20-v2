@@ -31,3 +31,9 @@ dialog.error path {
   padding-bottom: 1.5rem;
   max-width: 300px;
 }
+
+/* Once the only CSS for the buttons exists in button.css this can likely be removed */
+.popup-status > button {
+  align-self: center;
+}
+
