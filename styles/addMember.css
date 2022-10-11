@@ -1,0 +1,37 @@
+.form {
+  padding-left: 145px;
+  padding-top: 48px;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.form-input label,
+input {
+  display: block;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 576px;
+  height: 43px;
+  padding: 12px 16px;
+  align-items: center;
+  margin: 8px 0;
+  border: 2px solid var(--clr-white);
+  border-radius: 7px;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.button.addMember {
+  color: var(--clr-white);
+  padding: 12px 0;
+  border-radius: 7px;
+  font-weight: 600;
+  align-self: flex-end;
+  gap: 10px;
+  border: none;
+  width: 148px;
+  height: 43px;
+}
