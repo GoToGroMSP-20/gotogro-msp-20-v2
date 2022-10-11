@@ -84,7 +84,7 @@ if (isset($_POST["submit"])) {
         header("location: addMember.php?db=invalid");
         exit();
     } else {
-        $query = "UPDATE member SET firstName = '$firstname',lastName = '$lastname',dob = '$dob',email = '$email',mobile = '$phone' WHERE memberId = '$member_id'";
+        $query = "UPDATE member SET firstName = '$firstname',lastName = '$lastname',dob = '$dob',email = '$email',mobile = '$phone' WHERE member_id = '$member_id'";
 
         $insert_result = mysqli_query($conn, $query);
         $last_id = $conn->insert_id;
