@@ -14,11 +14,11 @@ if (isset($_POST["submit"])) {
         $fname = sanitise_input($fname);
         //echo "<p> First Name: $fname</p>";
         if (!preg_match("/^[A-Za-z]{1,20}$/", $fname)) {
-            header("location: addMember.php?fname=invalid");
+            header("location: addMember.php?member=invalid");
             exit();
         }
     } else {
-        header("location: addMember.php?fname=empty");
+        header("location: addMember.php?member=empty");
         exit();
     }
 
@@ -27,11 +27,11 @@ if (isset($_POST["submit"])) {
         $lname = sanitise_input($lname);
         //echo "<p> Last Name: $lname</p>";
         if (!preg_match("/^[A-Za-z]{1,20}$/", $lname)) {
-            header("location: addMember.php?lname=invalid");
+            header("location: addMember.php?member=invalid");
             exit();
         }
     } else {
-        header("location: addMember.php?lname=empty");
+        header("location: addMember.php?member=empty");
         exit();
     }
     if (isset($_POST["date"]) && !empty($_POST["date"])) {
@@ -39,7 +39,7 @@ if (isset($_POST["submit"])) {
         $dob = sanitise_input($dob);
         //echo "<p> DOB: $dob</p>";
     } else {
-        header("location: addMember.php?dob=empty");
+        header("location: addMember.php?member=empty");
         exit();
     }
     if (isset($_POST["email"]) && !empty($_POST["email"])) {
@@ -47,11 +47,11 @@ if (isset($_POST["submit"])) {
         $email = sanitise_input($email);
         //echo "<p> Email: $email</p>";
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            header("location: addMember.php?email=invalid");
+            header("location: addMember.php?member=invalid");
             exit();
         }
     } else {
-        header("location: addMember.php?email=empty");
+        header("location: addMember.php?member=empty");
         exit();
     }
     if (isset($_POST["mnumber"]) && !empty($_POST["mnumber"])) {
@@ -59,11 +59,11 @@ if (isset($_POST["submit"])) {
         $phone = sanitise_input($phone);
         //echo "<p> Phone No: $phone</p>";
         if (!preg_match("/^[\d]{10}$/", $phone)) {
-            header("location: addMember.php?phone=invalid");
+            header("location: addMember.php?member=invalid");
             exit();
         }
     } else {
-        header("location: addMember.php?phone=empty");
+        header("location: addMember.php?member=empty");
         exit();
     }
 
@@ -74,7 +74,7 @@ if (isset($_POST["submit"])) {
     if (!$conn) {
         // Display error msg
         echo "<p>Database connection failure </p>";
-        header("location: addMember.php?db=invalid");
+        header("location: addMember.php?member=connection_failure");
         exit();
     } else {
         $query = "INSERT INTO Member (firstName,lastName, dob, email, mobile) VALUES('$fname','$lname','$dob','$email','$phone');";
@@ -85,13 +85,13 @@ if (isset($_POST["submit"])) {
         // checks if the execution was successful
         if (!$insert_result) {
             echo "<p>Something is wrong with ", $query, "</p>";
-            header("location: addMember.php?db=query");
+            header("location: addMember.php?member=invalid_query");
             exit();
         }
         // close the database connection
         mysqli_close($conn);
     }
-    header("location: addMember.php?form=$last_id");
+    header("location: addMember.php?member=success");
     exit();
 } else {
     header("location: addMember.php");
