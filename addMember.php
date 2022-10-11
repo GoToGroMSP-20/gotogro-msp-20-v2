@@ -33,8 +33,8 @@
         <label for="mnumber">Mobile Number (Optional):</label>
         <input type="text" id="mnumber" name="mnumber">
       </div>
-      <div class="button">
-        <button class="button" id=button buttonType="primary" type="submit" name="submit">Add Member</button>
+      <div class="button addMember">
+        <button class="button addMember" id=button buttonType="primary" type="submit" name="submit">Add Member</button>
       </div>
     </form>
   </main>
