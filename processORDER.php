@@ -19,7 +19,7 @@ if (isset($_POST["submit"])) {
         }
         $product_ID1 = sanitise_input($_POST["product_ID1"]);
         $quantity1 = sanitise_input($_POST["quantity1"]);
-        $price1 = sanitise_input($_POST["price1"]);
+        //$price1 = sanitise_input($_POST["price1"]);
         $date = date("Y/m/d");
         require_once("settings.php"); // DB connection info
 
@@ -34,7 +34,7 @@ if (isset($_POST["submit"])) {
             $user_query = "SELECT * FROM member WHERE email = '$member_id'";
             $user_result = mysqli_query($conn, $user_query);
             $row = mysqli_fetch_assoc($user_result);
-            $memberId = $row["memberId"];
+            $memberId = $row["member_id"];
             echo "<p> DB member ID: $memberId</p>";
             // checks if the execution was successful
             if (!$row) {
@@ -42,7 +42,7 @@ if (isset($_POST["submit"])) {
                 header("location: index.php?Username=invalid_member_id");
                 exit();
             } else {
-                $query = "INSERT INTO MemberOrder (productName, quantity, unitPrice, memberId, datePurchased ) VALUES('$product_ID1','$quantity1','$price1','$memberId','$date');";
+                $query = "INSERT INTO Transaction (member_id, date_purchased) VALUES('$memberId','$date');";
 
                 $insert_result = mysqli_query($conn, $query);
                 $last_id = $conn->insert_id;
@@ -50,8 +50,20 @@ if (isset($_POST["submit"])) {
                 // checks if the execution was successful
                 if (!$insert_result) {
                     echo "<p>Something is wrong with ", $query, "</p>";
-                    header("location: index.php?order=invalid_query");
+                    header("location: index.php?order=invalid_queryT");
                     exit();
+                } else {
+                    $query = "INSERT INTO TransactionOrder (transaction_id, product_id, quantity ) VALUES('$last_id','$product_ID1', '$quantity1');";
+
+                    $insert_result = mysqli_query($conn, $query);
+                    $last_id = $conn->insert_id;
+
+                    // checks if the execution was successful
+                    if (!$insert_result) {
+                        echo "<p>Something is wrong with ", $query, "</p>";
+                        header("location: index.php?order=invalid_query");
+                        exit();
+                    }
                 }
             }
             // close the database connection
