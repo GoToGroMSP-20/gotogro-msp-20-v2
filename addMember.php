@@ -28,8 +28,7 @@
             </div>
             <div class="form-input">
                 <label for="date">Date of Birth:</label>
-                <input type="date" pattern="^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$" id="date" name="date"
-                    required>
+                <input type="date" id="date" min='1900-01-01' max='2100-01-01' name="date" required>
             </div>
             <div class="form-input">
                 <label for="email">Email:</label>
