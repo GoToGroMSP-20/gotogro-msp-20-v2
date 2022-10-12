@@ -10,16 +10,16 @@ function show_total() {
   document.getElementById("total_price").innerText = "Price : $0";
   if (product_ID1 != "placeholder" && !r1_qty == "") {
     r2.style.display = "flex";
-    if (product_ID1 == "Cheese") {
+    if (product_ID1 == "1") {
       var r1_price = "2";
     }
-    if (product_ID1 == "Milk") {
+    if (product_ID1 == "11") {
       var r1_price = "4";
     }
-    if (product_ID1 == "Cereal") {
+    if (product_ID1 == "21") {
       var r1_price = "6";
     }
-    if (product_ID1 == "Ice Cream") {
+    if (product_ID1 == "31") {
       var r1_price = "8";
     }
     r1_p.value = r1_price;
@@ -34,16 +34,16 @@ function show_total() {
     product_ID2 != "placeholder" &&
     !r2_qty == ""
   ) {
-    if (product_ID1 == "Cheese") {
+    if (product_ID1 == "1") {
       var r1_price = "2";
     }
-    if (product_ID2 == "Milk") {
+    if (product_ID2 == "11") {
       var r2_price = "4";
     }
-    if (product_ID2 == "Cereal") {
+    if (product_ID2 == "21") {
       var r2_price = "6";
     }
-    if (product_ID2 == "Ice Cream") {
+    if (product_ID2 == "31") {
       var r2_price = "8";
     }
     r2_p.value = r2_price;
