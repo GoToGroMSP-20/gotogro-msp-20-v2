@@ -19,14 +19,17 @@
   background-color: hsla(0, 0%, 0%, 0);
   color: var(--clr-white);
   padding: 12px 16px;
-  border: 2px solid var(--clr-white);
   margin: 4px 8px;
   box-sizing: border-box;
-  width: 100px;
+  width: 200px;
   height: 43px;
   border-radius: 7px;
 }
 
+.inputField input,
+.inputField select {
+  border: 2px solid var(--clr-white);
+}
 .inputField span {
   visibility: hidden;
   font-size: 0.75rem;
@@ -86,9 +89,17 @@
   width: 600px;
 }
 .inputField select {
-  width: 250px;
+  width: 300px;
 }
 #total_price {
+  margin-left: 450px;
   font-size: 24px;
   font-weight: 400;
+}
+
+#addordersubmit {
+  margin-left: 500px;
+}
+.show {
+  display: flex;
 }

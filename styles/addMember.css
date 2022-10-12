@@ -24,7 +24,7 @@ input[type="date"] {
   box-sizing: border-box;
 }
 
-.button {
+.button.addMember {
   color: var(--clr-white);
   padding: 12px 0;
   border-radius: 7px;
@@ -34,29 +34,4 @@ input[type="date"] {
   border: none;
   width: 148px;
   height: 43px;
-}
-
-.button[buttonType="primary"] {
-  background-color: var(--clr-primary_2);
-}
-
-.button[buttonType="secondary"] {
-  color: var(--clr-primary);
-  border: 2px solid var(--clr-primary);
-  background-color: hsla(0, 0%, 0%, 0);
-}
-
-.button[disabled] {
-  color: var(--clr-placeholder);
-  background-color: var(--clr-disabled);
-}
-
-.button[buttonType="primary"]:hover,
-.button[buttonType="secondary"]:hover {
-  cursor: pointer;
-  background-color: var(--clr-primary_3);
-}
-
-.button[disabled]:hover {
-  cursor: not-allowed;
 }
