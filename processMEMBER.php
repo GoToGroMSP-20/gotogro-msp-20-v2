@@ -63,8 +63,7 @@ if (isset($_POST["submit"])) {
             exit();
         }
     } else {
-        header("location: addMember.php?member=empty");
-        exit();
+        $phone = "";
     }
 
     require_once("settings.php"); // DB connection info
