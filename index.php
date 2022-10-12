@@ -20,7 +20,7 @@
         <form method="post" action="processORDER.php" id="form" id="apply" novalidate="novalidate">
             <div id="row_1">
                 <div class="inputField">
-                    <label for="product_ID1">Product ID</label>
+                    <label for="product_ID1">Product Name</label>
                     <select name="product_ID1" id="product_ID1">
                         <option value="placeholder" hidden>Please Select</option>
                         <option value="1">Cheese</option>
@@ -31,7 +31,8 @@
                 </div>
                 <div class="inputField">
                     <label for="quantity1">Quantity </label>
-                    <input type="number" min="1" max="100" name="quantity1" id="quantity1" required="required" onblur="show_total()" />
+                    <input type="number" min="1" max="100" name="quantity1" id="quantity1" required="required"
+                        onblur="show_total()" />
                 </div>
                 <div class="inputField">
                     <!-- <label for="price1">Price </label> -->
@@ -52,7 +53,7 @@
             </div>
             <div id="row_2">
                 <div class="inputField">
-                    <label for="product_ID2">Product ID</label>
+                    <label for="product_ID2">Product Name</label>
                     <select name="product_ID2" id="product_ID2">
                         <option value="placeholder" hidden>Please Select</option>
                         <option value="1">Cheese</option>
@@ -87,7 +88,8 @@
                     <label id="total_price"></label>
                     <br>
                     <label for="member_id">Member ID</label>
-                    <input type="text" name="member_id" minlength="10" placeholder=" Enter member's email" id="member_id" required="required" />
+                    <input type="text" name="member_id" minlength="10" placeholder=" Enter member's email"
+                        id="member_id" required="required" />
                     <span id=member_error></span>
                     <br>
                 </div>
@@ -104,7 +106,8 @@
                 <?php echo file_get_contents("./assets/icons/FaCheckCircle.svg"); ?>
                 <p>Submission successful</p>
             </div>
-            <button class="button" onclick="location.href = 'index.php';" buttonType="primary" type="submit" name="submit">Add another order</button>
+            <button class="button" onclick="location.href = 'index.php';" buttonType="primary" type="submit"
+                name="submit">Add another order</button>
         </dialog>
 
         <!-- Error dialog -->
@@ -113,7 +116,8 @@
                 <?php echo file_get_contents("./assets/icons/FaTimesCircle.svg"); ?>
                 <p>Oops! Something broke from our end. Please contact our technicians for support (Error code: 500)</p>
             </div>
-            <button class="button" onclick="location.href = 'index.php';" buttonType="primary" type="submit" name="submit">Back to Add Order</button>
+            <button class="button" onclick="location.href = 'index.php';" buttonType="primary" type="submit"
+                name="submit">Back to Add Order</button>
         </dialog>
 </body>
 <?php
