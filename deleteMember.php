@@ -30,7 +30,7 @@
          } else {
              // Upon successful connection
              $sql_table = "Member";
-             $user_query = "DELETE * FROM $sql_table WHERE email = '$member_id'";
+             $user_query = "DELETE FROM $sql_table WHERE email = '$member_id'";
              $user_result = mysqli_query($conn, $user_query);
              $row = mysqli_fetch_assoc($user_result);
              // checks if the execution was successful
