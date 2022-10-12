@@ -54,15 +54,24 @@ if (isset($_POST["submit"])) {
                     exit();
                 } else {
                     $query = "INSERT INTO TransactionOrder (transaction_id, product_id, quantity ) VALUES('$last_id','$product_ID1', '$quantity1');";
-
                     $insert_result = mysqli_query($conn, $query);
-                    $last_id = $conn->insert_id;
-
                     // checks if the execution was successful
                     if (!$insert_result) {
                         echo "<p>Something is wrong with ", $query, "</p>";
                         header("location: index.php?order=invalid_query");
                         exit();
+                    }
+                    if (isset($_POST["quantity2"]) && !empty($_POST["quantity2"])) {
+                        $product_ID2 = sanitise_input($_POST["product_ID2"]);
+                        $quantity2 = sanitise_input($_POST["quantity2"]);
+                        $query = "INSERT INTO TransactionOrder (transaction_id, product_id, quantity ) VALUES('$last_id','$product_ID2', '$quantity2');";
+                        $insert_result = mysqli_query($conn, $query);
+                        // checks if the execution was successful
+                        if (!$insert_result) {
+                            echo "<p>Something is wrong with ", $query, "</p>";
+                            header("location: index.php?order=invalid_query");
+                            exit();
+                        }
                     }
                 }
             }
