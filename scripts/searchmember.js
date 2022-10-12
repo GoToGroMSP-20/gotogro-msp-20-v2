@@ -11,10 +11,10 @@ function member_valid() {
       document.getElementById("row_1").classList.add("valid");
     }
     if (result) {
-      sessionStorage.memberid = document
+      sessionStorage.memberemail = document
         .getElementById("member_id")
         .value.trim();
-      console.log(sessionStorage.memberid);
+      console.log(sessionStorage.memberemail);
     }
     //alert(result);
     return result;
