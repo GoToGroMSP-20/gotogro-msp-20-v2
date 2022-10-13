@@ -13,8 +13,8 @@ if (isset($_POST["submit"])) {
         $member_id = $_POST["member_id"];
         $member_id = sanitise_input($member_id);
         //echo "<p> Member ID : $member_id</p>";
-        if ((!preg_match("/^[\d]{10}$/", $member_id)) && (!filter_var($member_id, FILTER_VALIDATE_EMAIL))) {
-            header("location: editMember.php?member_id=invalid");
+        if (!filter_var($member_id, FILTER_VALIDATE_EMAIL)) {
+            header("location: memberInfo.php?member_id=invalid");
             exit();
         }
         require_once("settings.php"); // DB connection info
@@ -24,33 +24,30 @@ if (isset($_POST["submit"])) {
         if (!$conn) {
             // Display error msg
             echo "<p>Database connection failure </p>";
-            header("location: editMember.php");
+            header("location: memberInfo.php?member_id=invalid");
             exit();
         } else {
             // Upon successful connection
-            $sql_table = "Member";
-            $user_query = "SELECT * FROM $sql_table WHERE mobile = '$member_id' OR email = '$member_id'";
+            $user_query = "SELECT * FROM Member WHERE email = '$member_id';";
             $user_result = mysqli_query($conn, $user_query);
             $row = mysqli_fetch_assoc($user_result);
             // checks if the execution was successful
             if (!$row) {
                 //echo User doesn't Exist
                 echo "<p class='manage_error'>User doesn't Exist</p>";
-                header("location: editMember.php?member_id=valid");
-                exit();
-            } else {
-                //echo User Exist
-                echo "<p class='manage_error'>User does Exist</p>";
-                header("location: editMember.php?member_id=invalid");
+                header("location: memberInfo.php?member_id=invalid_query");
                 exit();
             }
+            // close the database connection
+            mysqli_close($conn);
         }
+        header("location: memberDetails.php");
         exit();
     } else {
-        header("location: editMember.php?member_id=empty");
+        header("location: memberInfo.php?member_id=empty");
         exit();
     }
 } else {
-    header("location: editMember.php");
+    header("location: memberInfo.php");
     exit();
 }
