@@ -18,7 +18,7 @@
     <div class="editorder" id="editorder">
         <div>
             <a class="back-item" href="orderSummery.php">
-                <?php echo file_get_contents("./assets/icons/FiArrowLeft.svg"); ?> Go Back
+                <?php echo file_get_contents("./assets/icons/FiArrowLeft.svg"); ?> Order Summary
             </a>
         </div>
         <h1>Edit Order Details</h1>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="inputField">
                     <label for="quantity">Quantity </label>
-                    <input type="number" min="1" max="100" name="quantity" id="quantity" required="required"
+                    <input type="number" min="0" max="100" name="quantity" id="quantity" required="required"
                         onblur="show_total()" />
                 </div>
                 <div class="inputField">

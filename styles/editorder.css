@@ -70,6 +70,7 @@
   flex-direction: row;
 }
 #product_name {
+  border: 2px solid var(--clr-placeholder);
   width: 300px;
 }
 #editorderreset {
