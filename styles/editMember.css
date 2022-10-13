@@ -23,18 +23,9 @@
   box-sizing: border-box;
 }
 
-.button1{
-  color: var(--clr-white);
-  padding: 12px 0;
-  border-radius: 7px;
-  font-weight: 600;
-  align-self: flex-end;
-  gap: 10px;
-  border: none;
-  width: 148px;
-  height: 43px;
+#button1 {
+  margin-left: 10px;
 }
-
-.button2{
-  transform: translate(45%, -127%);
+#button2 {
+  margin-left: 340px;
 }

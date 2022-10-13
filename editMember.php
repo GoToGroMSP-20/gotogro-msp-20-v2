@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./styles/styles.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="scripts/editmember.js"></script>
     <link rel="icon" href="assets/icons/SiOverleaf.svg" type="image/icon" />
     <title>GoToGro | Edit Member</title>
 </head>
 
 <body>
     <?php
-  include_once("navbar.inc");
-  ?>
+    include_once("navbar.inc");
+    ?>
     <main>
         <form method="post" action="updateMEMBER.php" class="editMemberform">
 
@@ -46,20 +47,54 @@
                 <label for="phonenum" id="mobilenum">Mobile Number (Optional)</label>
                 <input type="tel" name="phonenum" id="phonenum" maxlength="10" pattern="[\d]{10}"
                     placeholder="For eg. 0400000000" />
-                <input type="hidden" name="member_id" id="member_id" value="1" />
+
+                <!-- Temp MEMBER ID -->
+                <input type="hidden" name="member_id" id="member_id" />
+
             </div>
-            <div class="button1">
+            <div>
+                <button class="button" id=button2 buttonType="secondary" type="reset" name="cancel">Cancel</button>
                 <button class="button" id=button1 buttonType="primary" type="submit" name="submit">Save Details</button>
             </div>
-
-            <div class="button2">
-                <button class="button" id=button2 buttonType="secondary" type="reset" name="cancel">Cancel</button>
-            </div>
-
-
         </form>
     </main>
+    <!-- Success dialog -->
+    <dialog class="success" id="success">
+        <div class="popup-status">
+            <?php echo file_get_contents("./assets/icons/FaCheckCircle.svg"); ?>
+            <p>Edit successful</p>
+        </div>
+        <div class="SuccessButton">
+            <button class="button" onclick="location.href = 'memberinfo.php';" buttonType="secondary" type="submit"
+                name="submit">Search a Member</button>
+            <button class="button" onclick="location.href = 'index.php';" buttonType="primary" type="submit"
+                name="submit">Add an Order</button>
+        </div>
+        </div>
+    </dialog>
+
+    <!-- Error dialog -->
+    <dialog class="error" id="error">
+        <div class="popup-status">
+            <?php echo file_get_contents("./assets/icons/FaTimesCircle.svg"); ?>
+            <p>Unable to Edit Member. Something broke from our end, please contact our technicians for support. (Error:
+                500)</p>
+            <button class="button" onclick="location.href = 'addMember.php';" buttonType="primary" type="submit"
+                name="submit">Back to Add Member</button>
+        </div>
+    </dialog>
 </body>
-<script type="text/javascript" src="/scripts/navbar.js"></script>
+<?php
+if (isset($_GET['member']) && !empty($_GET["member"])) {
+    $member = $_GET['member'];
+    //echo $member;
+    if ($member == "empty" ||  $member == "invalid" ||  $member == "invalid_query" ||  $member == "connection_failure" ||  $member == "invalid_id" || $member == "invalid_member_id") {
+        echo "<script>document.getElementById('error').classList.add('show');</script>";
+    } else if ($member == "success") {
+        echo "<script>document.getElementById('success').classList.add('show');</script>";
+    }
+}
+?>
+<!-- <script type="text/javascript" src="/scripts/navbar.js"></script> -->
 
 </html>
