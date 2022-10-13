@@ -17,7 +17,7 @@
         <div class="popup-status">
             <?php echo file_get_contents("./assets/icons/FaTimesCircle.svg"); ?>
             <p>Oops! Something broke from our end. Please contact our technicians for support (Error code: 500)</p>
-            <button class="button" onclick="location.href = '/index.php';" buttonType="primary" type="submit" name="submit">Back to Add Order</button>
+            <button class="button" onclick="location.href = 'index.php';" buttonType="primary" type="submit" name="submit">Back to Add Order</button>
         </div>
     </dialog>
 
