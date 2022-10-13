@@ -30,16 +30,6 @@
                 </div>
             </div>
         </form>
-        <!-- Success dialog -->
-        <dialog class="success" id="success">
-            <div class="popup-status">
-                <?php echo file_get_contents("./assets/icons/FaCheckCircle.svg"); ?>
-                <p>Member Exist</p>
-            </div>
-            <button class="button" onclick="location.href = 'memberDetails.php';" buttonType="primary" type="submit"
-                name="submit">View Member</button>
-        </dialog>
-
         <!-- Error dialog -->
         <dialog class="error" id="error">
             <div class="popup-status">
@@ -57,8 +47,6 @@ if (isset($_GET['member_id']) && !empty($_GET["member_id"])) {
     //echo $member_id;
     if ($member_id == "empty" ||  $member_id == "invalid" ||  $member_id == "invalid_query" ||  $member_id == "connection_failure") {
         echo "<script>document.getElementById('error').classList.add('show');</script>";
-    } else if ($member_id == "success") {
-        echo "<script>document.getElementById('success').classList.add('show');</script>";
     }
 }
 ?>
