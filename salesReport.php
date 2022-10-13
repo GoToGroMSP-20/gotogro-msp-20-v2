@@ -128,7 +128,7 @@
                 }
             ?>  
         <button class="button" id=button buttonType="primary" type="button" name="button">Export to .CSV</button>
-        <?php mysql_close($con);?>
+        <?php mysqli_close($conn);?>
         </div>
     </main>
 </body>
