@@ -34,9 +34,8 @@ h3 {
 
 table,
 th,
-td,
-tr {
-  font-family: "Consolas";
+td {
+  font-family: "Menlo", "Monaco";
   font-size: 1.125rem;
 }
 
