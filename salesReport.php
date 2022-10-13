@@ -44,6 +44,7 @@
                                     ON p.product_id = o.product_id
                                     INNER JOIN transaction t 
                                     ON o.transaction_id = t.transaction_id
+                                    -- Comment out the line below to Test selection of transactions for last 30 days
                                     WHERE t.date_purchased > NOW() - INTERVAL 30 day 
                                     GROUP BY o.product_id
                                     ORDER BY o.product_id";
