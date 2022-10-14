@@ -16,35 +16,40 @@
     <?php
     include_once("navbar.inc");
     ?>
-    <div class="editmember">
-        <!-- <h1 class="white-text">Search for member </h1>-->
+    <div class="memberinfo" id="memberinfo">
         <form method="post" action="searchMEMBER.php" novalidate="novalidate">
             <div class="inputField">
                 <label for="member_id">Search for member </label>
                 <br>
                 <div id="emember">
-                    <input type="text" name="member_id" id="member_id" required="required"
-                        placeholder="Enter member's email or mobile number" onblur="member_valid();" />
-
+                    <div id="row_1">
+                        <input type="email" name="member_id" id="member_id" required="required"
+                            placeholder="Enter member's email" onblur="member_valid();" />
+                    </div>
                     <button class="button" buttonType="primary" type="submit" name="submit" id="submit">Search </button>
-                    <span id=member_error></span>
                 </div>
             </div>
         </form>
+        <!-- Error dialog -->
+        <dialog class="error" id="error">
+            <div class="popup-status">
+                <?php echo file_get_contents("./assets/icons/FaTimesCircle.svg"); ?>
+                <p>Oops! Something broke from our end. Please contact our technicians for support (Error code: 500)</p>
+            </div>
+            <button class="button" onclick="location.href = 'memberinfo.php';" buttonType="primary" type="submit"
+                name="submit">Back to Search Member</button>
+        </dialog>
     </div>
 </body>
 <?php
 if (isset($_GET['member_id']) && !empty($_GET["member_id"])) {
     $member_id = $_GET['member_id'];
     //echo $member_id;
-    if ($member_id == "empty" ||  $member_id == "invalid") {
-        echo "<script>document.getElementById('emember').classList.add('invalid');
-        document.getElementById('member_error').innerText = 'Invalid Member ID';</script>";
-    } else if ($member_id == "valid") {
-        echo "<script>document.getElementById('emember').classList.add('valid');
-        document.getElementById('member_error').innerText = 'Valid Member ID';</script>";
+    if ($member_id == "empty" ||  $member_id == "invalid" ||  $member_id == "invalid_query" ||  $member_id == "connection_failure") {
+        echo "<script>document.getElementById('error').classList.add('show');</script>";
     }
 }
 ?>
+<script type="text/javascript" src="/scripts/navbar.js"></script>
 
 </html>

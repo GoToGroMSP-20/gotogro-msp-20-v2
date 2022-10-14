@@ -30,4 +30,5 @@
       </a>
     </li>
   </ul>
+  <script type="text/javascript" src="./scripts/navbar.js"></script>
 </nav>

@@ -1,0 +1,38 @@
+dialog {
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  padding: 2rem 0;
+  width: 450px;
+  background-color: var(--clr-secondary_2);
+  color: var(--clr-white);
+  font-weight: 600;
+}
+
+dialog.success path {
+  fill: var(--clr-primary);
+}
+
+dialog.error path {
+  fill: var(--clr-error);
+}
+
+.popup-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-status > p {
+  text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+  max-width: 300px;
+}
+
+/* Once the only CSS for the buttons exists in button.css this can likely be removed */
+.popup-status > button {
+  align-self: center;
+}
+
