@@ -126,9 +126,9 @@
                         </table>";
                     }                    
                 }
-            ?>  
-        <button class="button" id=button buttonType="primary" type="button" name="button">Export to .CSV</button>
-        <?php mysqli_close($conn);?>
+            ?>
+            <button class="button" id=button onclick="location.href = 'exportREPORT.php';" buttonType="primary">Export to .CSV</button>
+            <?php mysqli_close($conn);?>
         </div>
     </main>
 </body>
