@@ -13,7 +13,7 @@ if (isset($_POST["submit"])) {
         $member_id = sanitise_input($member_id);
         //echo "<p> Member ID : $member_id</p>";
     } else {
-        header("location: index.php?memberid=empty");
+        header("location: editMember.php?member=empty");
         exit();
     }
 
@@ -22,11 +22,11 @@ if (isset($_POST["submit"])) {
         $firstname = sanitise_input($firstname);
         //echo "<p> First Name: $firstname</p>";
         if (!preg_match("/^[A-Za-z]{1,20}$/", $firstname)) {
-            header("location: addMember.php?firstname=invalid");
+            header("location: editMember.php?member=invalid");
             exit();
         }
     } else {
-        header("location: addMember.php?firstname=empty");
+        header("location: editMember.php?member=empty");
         exit();
     }
 
@@ -35,11 +35,11 @@ if (isset($_POST["submit"])) {
         $lastname = sanitise_input($lastname);
         //echo "<p> Last Name: $lastname</p>";
         if (!preg_match("/^[A-Za-z]{1,20}$/", $lastname)) {
-            header("location: addMember.php?lastname=invalid");
+            header("location: editMember.php?member=invalid");
             exit();
         }
     } else {
-        header("location: addMember.php?lastname=empty");
+        header("location: editMember.php?member=empty");
         exit();
     }
     if (isset($_POST["dateofbirth"]) && !empty($_POST["dateofbirth"])) {
@@ -47,7 +47,7 @@ if (isset($_POST["submit"])) {
         $dob = sanitise_input($dob);
         //echo "<p> DOB: $dob</p>";
     } else {
-        header("location: addMember.php?dob=empty");
+        header("location: editMember.php?member=empty");
         exit();
     }
     if (isset($_POST["email"]) && !empty($_POST["email"])) {
@@ -55,11 +55,11 @@ if (isset($_POST["submit"])) {
         $email = sanitise_input($email);
         //echo "<p> Email: $email</p>";
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            header("location: addMember.php?email=invalid");
+            header("location: editMember.php?member=invalid");
             exit();
         }
     } else {
-        header("location: addMember.php?email=empty");
+        header("location: editMember.php?member=empty");
         exit();
     }
     if (isset($_POST["phonenum"]) && !empty($_POST["phonenum"])) {
@@ -67,7 +67,7 @@ if (isset($_POST["submit"])) {
         $phone = sanitise_input($phone);
         //echo "<p> Phone No: $phone</p>";
         if (!preg_match("/^[\d]{10}$/", $phone)) {
-            header("location: addMember.php?phone=invalid");
+            header("location: editMember.php?member=invalid");
             exit();
         }
     } else {
@@ -81,26 +81,36 @@ if (isset($_POST["submit"])) {
     if (!$conn) {
         // Display error msg
         echo "<p>Database connection failure </p>";
-        header("location: addMember.php?db=invalid");
+        header("location: editMember.php?member=connection_failure");
         exit();
     } else {
-        $query = "UPDATE member SET firstName = '$firstname',lastName = '$lastname',dob = '$dob',email = '$email',mobile = '$phone' WHERE member_id = '$member_id'";
-
-        $insert_result = mysqli_query($conn, $query);
-        $last_id = $conn->insert_id;
-
+        $user_query = "SELECT * FROM member WHERE member_id = '$member_id'";
+        $user_result = mysqli_query($conn, $user_query);
+        $row = mysqli_fetch_assoc($user_result);
+        $memberId = $row["member_id"];
+        echo "<p> DB member ID: $memberId</p>";
         // checks if the execution was successful
-        if (!$insert_result) {
-            echo "<p>Something is wrong with ", $query, "</p>";
-            header("location: addMember.php?db=query");
+        if (!$row) {
+            echo "<p class='manage_error'>Something is wrong with ", $query, "</p>";
+            header("location: editMember.php?member=invalid_member_id");
             exit();
+        } else {
+            $query = "UPDATE member SET firstName = '$firstname',lastName = '$lastname',dob = '$dob',email = '$email',mobile = '$phone' WHERE member_id = '$memberId'";
+            $insert_result = mysqli_query($conn, $query);
+
+            // checks if the execution was successful
+            if (!$insert_result) {
+                echo "<p>Something is wrong with ", $query, "</p>";
+                header("location: editMember.php?member=invalid_query");
+                exit();
+            }
         }
         // close the database connection
         mysqli_close($conn);
     }
-    header("location: addMember.php?form=success");
+    header("location: editMember.php?member=success");
     exit();
 } else {
-    header("location: addMember.php");
+    header("location: editMember.php");
     exit();
 }
