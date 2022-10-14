@@ -16,7 +16,7 @@
     border: none;
     width: 148px;
     height: 43px;
-    transform: translate(-17%, -54%);
+    transform: translate(-67%, -64%);
   }
 
   .button3[buttonType="danger"] {
@@ -54,8 +54,20 @@
     border: none;
     width: 148px;
     height: 43px;
-    transform: translate(80%, 12%);
+    transform: translate(15%, -5%);
   }
   
-  
+ 
+  .memberDetails{
+    line-height: 19px;
+    display: flex;
+    flex-direction: row;
+  }
 
+.inputField1{
+    margin-left: 2rem;
+}
+
+.inputField2{
+    margin-left: 8.7rem;
+}
