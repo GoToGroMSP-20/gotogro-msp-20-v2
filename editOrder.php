@@ -92,5 +92,6 @@ if (isset($_GET['order']) && !empty($_GET["order"])) {
     }
 }
 ?>
+<script type="text/javascript" src="/scripts/navbar.js"></script>
 
 </html>
