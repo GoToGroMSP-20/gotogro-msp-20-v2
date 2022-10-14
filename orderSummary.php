@@ -34,7 +34,13 @@
         $transaction_id = $_GET['transaction_id'];
         //echo $transaction_id;
     } else {
-        $transaction_id = "0";
+        echo "<dialog class='error' id='error'>
+        <div class='popup-status'>
+        <br >
+            <p>Fetching Data.......</p>
+        </div></dialog>";
+        echo "<script>document.getElementById('error').classList.add('show');</script>";
+        exit();
     }
     $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
     if (!$conn) {
@@ -92,7 +98,7 @@
             <div>
                 <h3>Order Summary</h3>
                 <?php echo
-                "<table>
+                "<table id= orders>
                         <thead>
                             <tr>
                                 <th>Product Name</th>
@@ -103,21 +109,18 @@
                             </tr>
                         </thead>           
                         <tbody>";
-                $x = 1;
+                $count = 1;
                 foreach ($query_result as $row) :
-                    //$orderid = $row['orderid'];
-                    $productid = $row['product_id'];
-                    $name = $row['name'];
-                    $price = $row['price'];
-                    $quantity = $row['quantity'];
-                    echo "<tr id=" . $x . "'>
-                                <td>{$row['name']}</td>
-                                <td>{$row['quantity']}</td>
-                                <td>{$row['price']}</td>
-                                <td>{$row['amount']}</td>
-                                <td><button><a href='update.php?productid=" . $productid . "&name=" . $name . "&price=" . $price . "&quantity=" . $quantity . "'>Edit</button></td>
+                    echo "<tr class=" . $count . "'>
+                                <td id=1 style='display:none;'>{$row['product_id']}</td>
+                                <td id=2>{$row['name']}</td>
+                                <td id=3>{$row['quantity']}</td>
+                                <td id=4>{$row['price']}</td>
+                                <td id=5>{$row['amount']}</td>
+                                <td><button class='editbutton'id=" . $count . " onClick='storeDetails(this.id)'>Edit</button></td>
+                                
                             </tr>\n";
-                    $x++;
+                    $count++;
                 endforeach;
                 echo
                 "   </tbody>
