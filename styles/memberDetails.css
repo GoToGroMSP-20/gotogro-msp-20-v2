@@ -1,0 +1,11 @@
+.memberDetailsform {
+    padding-left: 145px;
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+
+.memberDetailsform label {
+  display: block;
+}
