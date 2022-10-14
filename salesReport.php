@@ -127,10 +127,8 @@
                     }                    
                 }
             ?>
-        <form method="get" action="exportREPORT.php" novalidate="novalidate">
-            <button class="button" id=button buttonType="primary" type="submit" name="button">Export to .CSV</button>
-        </form>
-        <?php mysqli_close($conn);?>
+            <button class="button" id=button onclick="location.href = 'exportREPORT.php';" buttonType="primary">Export to .CSV</button>
+            <?php mysqli_close($conn);?>
         </div>
     </main>
 </body>
