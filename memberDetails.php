@@ -20,6 +20,7 @@ if(!$conn) {
     } else {
 
         $member_id = "redguy@donthugme.com";
+        //$member_id = "sessionStorage.memberemail";
 
         $user_query =  "SELECT * FROM member WHERE email = '$member_id'";
                                    
@@ -45,41 +46,39 @@ if(!$conn) {
         <form method="get" action="searchMEMBER.php" class="memberDetailsform">
 
             <div class="memberDetails">
-            <?php echo "<h1>$row{['firstName'] $row{['lastName']}</h1>" ?>
+            <?php echo "<h1>{$row['firstName']} {$row['lastName']}</h1>" ?>
                 <h3>Member Details</h3>
             </div>
 
 
             <div class="memberDetails">
-                <label for="memberID" id="memberid">Member ID</label>
-                <!-- <input type="text" pattern="[a-zA-Z]{2,20}" id="firstname" name="firstname" required /> -->
+              <b><label for="memberID" id="memberid">Member ID</label></b>
+                
                 <?php
                     echo "<p>{$row['member_id']}</p>"
                 ?>
 
             </div>
 
-            <div class="memberDetails">
-                <label for="DateofBirth" id="dob">Date of Birth</label>
-                <!-- <input type="text" min='1900-01-01' max='2100-01-01' name="dateofbirth" id="dateofbirth" required
-                    placeholder="YYYY-MM-DD" /> -->
+            <div class="memberDetails" id="MDDOB">
+                <b><label for="DateofBirth" id="dob">Date of Birth</label></b>
+                
                 <?php
                     echo "<p>{$row['dob']}</p>"
                 ?>    
             </div>
 
             <div class="memberDetails">
-                <label for="email" id="em">Email</label>
-                <!-- <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required /> -->
+               <b><label for="email" id="em">Email</label></b>
+                
                 <?php
                     echo "<p>{$row['email']}</p>"
                 ?>   
             </div>
 
             <div class="memberDetails">
-                <label for="phonenum" id="mobilenum">Mobile Number</label>
-                <!-- <input type="tel" name="phonenum" id="phonenum" maxlength="10" pattern="[\d]{10}" -->
-                    <!-- placeholder="For eg. 0400000000" /> -->
+                <b><label for="phonenum" id="mobilenum">Mobile Number</label></b>
+                
                     <?php
                     echo "<p>{$row['mobile']}</p>"
                 ?>   
@@ -91,7 +90,7 @@ if(!$conn) {
             </div>
 
             <div class="button3">
-                <button class="button" id=button3 buttonType="secondary" type="reset" name="cancel">Delete Member</button>
+                <button class="button3" id=button3 buttonType="danger" type="reset" name="cancel">Delete Member</button>
             </div>
 
 
