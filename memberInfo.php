@@ -16,7 +16,7 @@
     <?php
     include_once("navbar.inc");
     ?>
-    <div class="editmember" id="editmember">
+    <div class="memberinfo" id="memberinfo">
         <form method="post" action="searchMEMBER.php" novalidate="novalidate">
             <div class="inputField">
                 <label for="member_id">Search for member </label>
