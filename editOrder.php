@@ -17,7 +17,7 @@
     ?>
     <div class="editorder" id="editorder">
         <div>
-            <a class="back-item" href="orderSummery.php">
+            <a class="back-item" href="orderSummary.php">
                 <?php echo file_get_contents("./assets/icons/FiArrowLeft.svg"); ?> Order Summary
             </a>
         </div>
@@ -53,7 +53,7 @@
             </div>
             <div id="row_3">
                 <div>
-                    <a class="button" id="editorderreset" buttonType="secondary" href="orderSummery.php">Cancel</a>
+                    <a class="button" id="editorderreset" buttonType="secondary" href="orderSummary.php">Cancel</a>
                     <button class="button" id="editordersubmit" buttonType="primary" type="submit" name="submit">Save
                         Details</button>
                     <br>

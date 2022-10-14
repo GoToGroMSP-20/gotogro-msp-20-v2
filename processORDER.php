@@ -14,7 +14,7 @@ if (isset($_POST["submit"])) {
         $member_id = sanitise_input($member_id);
         //echo "<p> Member ID : $member_id</p>";
         if (!filter_var($member_id, FILTER_VALIDATE_EMAIL)) {
-            header("location: index.php?order=invalid_id");
+            header("location: addOrder.php?order=invalid_id");
             exit();
         }
         $product_ID1 = sanitise_input($_POST["product_ID1"]);
@@ -28,7 +28,7 @@ if (isset($_POST["submit"])) {
         if (!$conn) {
             // Display error msg
             echo "<p>Database connection failure </p>";
-            header("location: index.php?order=connection_failure");
+            header("location: addOrder.php?order=connection_failure");
             exit();
         } else {
             $user_query = "SELECT * FROM member WHERE email = '$member_id'";
@@ -39,7 +39,7 @@ if (isset($_POST["submit"])) {
             // checks if the execution was successful
             if (!$row) {
                 echo "<p class='manage_error'>Something is wrong with ", $query, "</p>";
-                header("location: index.php?Username=invalid_member_id");
+                header("location: addOrder.php?Username=invalid_member_id");
                 exit();
             } else {
                 $query = "INSERT INTO Transaction (member_id, date_purchased) VALUES('$memberId','$date');";
@@ -50,7 +50,7 @@ if (isset($_POST["submit"])) {
                 // checks if the execution was successful
                 if (!$insert_result) {
                     echo "<p>Something is wrong with ", $query, "</p>";
-                    header("location: index.php?order=invalid_queryT");
+                    header("location: addOrder.php?order=invalid_queryT");
                     exit();
                 } else {
                     $query = "INSERT INTO TransactionOrder (transaction_id, product_id, quantity ) VALUES('$last_id','$product_ID1', '$quantity1');";
@@ -58,7 +58,7 @@ if (isset($_POST["submit"])) {
                     // checks if the execution was successful
                     if (!$insert_result) {
                         echo "<p>Something is wrong with ", $query, "</p>";
-                        header("location: index.php?order=invalid_query");
+                        header("location: addOrder.php?order=invalid_query");
                         exit();
                     }
                     if (isset($_POST["quantity2"]) && !empty($_POST["quantity2"])) {
@@ -69,7 +69,7 @@ if (isset($_POST["submit"])) {
                         // checks if the execution was successful
                         if (!$insert_result) {
                             echo "<p>Something is wrong with ", $query, "</p>";
-                            header("location: index.php?order=invalid_query");
+                            header("location: addOrder.php?order=invalid_query");
                             exit();
                         }
                     }
@@ -78,13 +78,13 @@ if (isset($_POST["submit"])) {
             // close the database connection
             mysqli_close($conn);
         }
-        header("location: index.php?order=success");
+        header("location: addOrder.php?order=success");
         exit();
     } else {
-        header("location: index.php?order=empty");
+        header("location: addOrder.php?order=empty");
         exit();
     }
 } else {
-    header("location: index.php");
+    header("location: addOrder.php");
     exit();
 }
