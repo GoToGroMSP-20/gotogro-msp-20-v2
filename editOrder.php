@@ -66,7 +66,7 @@
                 <?php echo file_get_contents("./assets/icons/FaCheckCircle.svg"); ?>
                 <p>Submission successful</p>
             </div>
-            <button class="button" onclick="location.href = 'orderSummery.php';" buttonType="primary" type="submit"
+            <button class="button" onclick="location.href = 'orderSummary.php';" buttonType="primary" type="submit"
                 name="submit">Back to Order Summary</button>
         </dialog>
 
@@ -76,7 +76,7 @@
                 <?php echo file_get_contents("./assets/icons/FaTimesCircle.svg"); ?>
                 <p>Oops! Something broke from our end. Please contact our technicians for support (Error code: 500)</p>
             </div>
-            <button class="button" onclick="location.href = 'orderSummery.php';" buttonType="primary" type="submit"
+            <button class="button" onclick="location.href = 'orderSummary.php';" buttonType="primary" type="submit"
                 name="submit">Back to Order Summary</button>
         </dialog>
 </body>

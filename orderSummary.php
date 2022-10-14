@@ -58,7 +58,7 @@
                 <p>Submission successful</p>
             </div>
             <button class="button" onclick="location.href = 'memberDetails.php';" buttonType="primary" type="submit"
-                name="submit">Back to Order Summary</button>
+                name="submit">Back to Member Details</button>
         </dialog>
 
         <!-- Error dialog -->
@@ -68,7 +68,7 @@
                 <p>Oops! Something broke from our end. Please contact our technicians for support (Error code: 500)</p>
             </div>
             <button class="button" onclick="location.href = 'memberDetails.php';" buttonType="primary" type="submit"
-                name="submit">Back to Order Summary</button>
+                name="submit">Back to Member Details</button>
         </dialog>
 </body>
 <?php
