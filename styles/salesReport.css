@@ -5,6 +5,7 @@
     flex-direction: column;
     gap: 24px;
     position: absolute;
+    width: 800px;
     padding-left: 145px;
     padding-top: 48px;
 }
