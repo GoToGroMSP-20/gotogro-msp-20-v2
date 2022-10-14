@@ -1,73 +1,71 @@
 .memberDetailsform {
-    padding-left: 145px;
-    padding-top: 48px;
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-  }
-  
-  .button3 {
-    color: var(--clr-error);
-    padding: 12px 0;
-    border-radius: 7px;
-    font-weight: 600;
-    align-self: flex-end;
-    gap: 10px;
-    border: none;
-    width: 148px;
-    height: 43px;
-    transform: translate(-67%, -64%);
-  }
-
-  .button3[buttonType="danger"] {
-    background-color: var(--clr-error);
-  }
-  
-  .button3[buttonType="danger"] {
-    color: var(--clr-error);
-    border: 2px solid var(--clr-error);
-    background-color: hsla(0, 0%, 0%, 0);
-  }
-  
-  .button3[disabled] {
-    color: var(--clr-placeholder);
-    background-color: var(--clr-disabled);
-  }
-  
-  
-  .button3[buttonType="danger"]:hover {
-    cursor: pointer;
-    background-color: var(--clr-placeholder);
-  }
-  
-  .button3[disabled]:hover {
-    cursor: not-allowed;
-  }
-
-  .button1 {
-    color: var(--clr-white);
-    padding: 12px 0;
-    border-radius: 7px;
-    font-weight: 600;
-    align-self: flex-end;
-    gap: 10px;
-    border: none;
-    width: 148px;
-    height: 43px;
-    transform: translate(15%, -5%);
-  }
-  
- 
-  .memberDetails{
-    line-height: 19px;
-    display: flex;
-    flex-direction: row;
-  }
-
-.inputField1{
-    margin-left: 2rem;
+  padding-left: 145px;
+  padding-top: 48px;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
 }
 
-.inputField2{
-    margin-left: 8.7rem;
+.button3 {
+  color: var(--clr-error);
+  padding: 12px 0;
+  border-radius: 7px;
+  font-weight: 600;
+  align-self: flex-end;
+  gap: 10px;
+  border: none;
+  width: 148px;
+  height: 43px;
+  transform: translate(-67%, -64%);
+}
+
+.button3[buttonType="danger"] {
+  background-color: var(--clr-error);
+}
+
+.button3[buttonType="danger"] {
+  color: var(--clr-error);
+  border: 2px solid var(--clr-error);
+  background-color: hsla(0, 0%, 0%, 0);
+}
+
+.button3[disabled] {
+  color: var(--clr-placeholder);
+  background-color: var(--clr-disabled);
+}
+
+.button3[buttonType="danger"]:hover {
+  cursor: pointer;
+  background-color: var(--clr-placeholder);
+}
+
+.button3[disabled]:hover {
+  cursor: not-allowed;
+}
+
+.button1 {
+  color: var(--clr-white);
+  padding: 12px 0;
+  border-radius: 7px;
+  font-weight: 600;
+  align-self: flex-end;
+  gap: 10px;
+  border: none;
+  width: 148px;
+  height: 43px;
+  transform: translate(15%, -5%);
+}
+
+.memberDetails {
+  line-height: 19px;
+  display: flex;
+  flex-direction: row;
+}
+
+.inputField1 {
+  margin-left: 2rem;
+}
+
+.inputField2 {
+  margin-left: 8.7rem;
 }

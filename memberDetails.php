@@ -46,10 +46,10 @@
         <form method="get" action="searchMEMBER.php" class="memberDetailsform">
 
             <!-- <div class="memberDetails"> -->
-                <?php echo "<h1>{$row['firstName']} {$row['lastName']}</h1>" ?>
-                <h3>Member Details</h3>
+            <?php echo "<h1>{$row['firstName']} {$row['lastName']}</h1>" ?>
+            <h3>Member Details</h3>
             <!-- </div> -->
-<div class="memberDetails">
+            <div class="memberDetails">
 
 
                 <div class="inputField">
@@ -60,26 +60,26 @@
 
 
                 <div class="inputField2">
-                <b><label for="DateofBirth" id="dob">Date of Birth</label></b>
-                <?php echo "<p>{$row['dob']}</p>" ?>
-            </div>
+                    <b><label for="DateofBirth" id="dob">Date of Birth</label></b>
+                    <?php echo "<p>{$row['dob']}</p>" ?>
+                </div>
 
             </div>
 
 
             <div class="memberDetails">
 
-            <div class="inputField">
-                <b><label for="email" id="em">Email</label></b>
-                <?php echo "<p>{$row['email']}</p>" ?>
+                <div class="inputField">
+                    <b><label for="email" id="em">Email</label></b>
+                    <?php echo "<p>{$row['email']}</p>" ?>
                 </div>
 
-            <div class="inputField1">
-                <b><label for="phonenum" id="mobilenum">Mobile Number</label></b>
-                <?php echo "<p>{$row['mobile']}</p>" ?>
+                <div class="inputField1">
+                    <b><label for="phonenum" id="mobilenum">Mobile Number</label></b>
+                    <?php echo "<p>{$row['mobile']}</p>" ?>
 
-                <input type="hidden" name="member_id" id="member_id" value="1" />
-            </div>
+                    <input type="hidden" name="member_id" id="member_id" value="1" />
+                </div>
             </div>
 
 
