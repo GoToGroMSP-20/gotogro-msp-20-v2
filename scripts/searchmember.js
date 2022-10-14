@@ -23,7 +23,7 @@ function member_valid() {
   }
 }
 function init() {
-  var editmember = document.getElementById("editmember");
+  var editmember = document.getElementById("memberinfo");
   editmember.onsubmit = member_valid;
 }
 

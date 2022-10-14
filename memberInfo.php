@@ -16,7 +16,7 @@
     <?php
     include_once("navbar.inc");
     ?>
-    <div class="editmember" id="editmember">
+    <div class="memberinfo" id="memberinfo">
         <form method="post" action="searchMEMBER.php" novalidate="novalidate">
             <div class="inputField">
                 <label for="member_id">Search for member </label>
@@ -50,5 +50,6 @@ if (isset($_GET['member_id']) && !empty($_GET["member_id"])) {
     }
 }
 ?>
+<script type="text/javascript" src="/scripts/navbar.js"></script>
 
 </html>

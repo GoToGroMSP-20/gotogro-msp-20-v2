@@ -95,6 +95,6 @@ if (isset($_GET['member']) && !empty($_GET["member"])) {
     }
 }
 ?>
-<!-- <script type="text/javascript" src="/scripts/navbar.js"></script> -->
+<script type="text/javascript" src="/scripts/navbar.js"></script>
 
 </html>
