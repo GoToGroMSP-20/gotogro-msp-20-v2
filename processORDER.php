@@ -39,7 +39,7 @@ if (isset($_POST["submit"])) {
             // checks if the execution was successful
             if (!$row) {
                 echo "<p class='manage_error'>Something is wrong with ", $query, "</p>";
-                header("location: addOrder.php?Username=invalid_member_id");
+                header("location: addOrder.php?order=invalid_member_id");
                 exit();
             } else {
                 $query = "INSERT INTO Transaction (member_id, date_purchased) VALUES('$memberId','$date');";
