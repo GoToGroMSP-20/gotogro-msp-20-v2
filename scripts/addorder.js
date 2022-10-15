@@ -34,8 +34,8 @@ function show_total() {
     product_ID2 != "placeholder" &&
     !r2_qty == ""
   ) {
-    if (product_ID1 == "1") {
-      var r1_price = "2";
+    if (product_ID2 == "1") {
+      var r2_price = "2";
     }
     if (product_ID2 == "11") {
       var r2_price = "4";
