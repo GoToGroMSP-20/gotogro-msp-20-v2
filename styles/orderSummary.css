@@ -6,8 +6,6 @@
   gap: 24px;
   position: absolute;
   width: 800px;
-  padding-left: 145px;
-  padding-top: 48px;
 }
 
 .purchasedOn {
@@ -56,4 +54,8 @@ td {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+
+.orderSummary .genericLink {
+  text-decoration: underline;
 }
