@@ -41,7 +41,7 @@ if (isset($_POST["submit"])) {
             // close the database connection
             mysqli_close($conn);
         }
-        header("location: memberDetails.php");
+        header("location: memberDetails.php?member_id=". $row['member_id']);
         exit();
     } else {
         header("location: memberInfo.php?member_id=empty");

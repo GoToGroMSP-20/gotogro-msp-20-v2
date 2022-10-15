@@ -9,26 +9,26 @@
 
     <body>
         <?php
-            require_once("settings.php");
-            $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
-            if (!$conn) {
-                echo "<script type='text/javascript' src='./scripts/salesreportdialog.js'></script>";
-                exit();
-            } else {
-                $member_id = "redguy@donthugme.com";
-                //$member_id = "sessionStorage.memberemail";
-
-                $user_query =  "SELECT * FROM member WHERE email = '$member_id'";
-
-                $user_result = mysqli_query($conn, $user_query);
-                if (!$user_result) {
-                    echo "<script type='text/javascript' src='./scripts/salesreportdialog.js'></script>";
-                    exit();
-                } else if (mysqli_num_rows($user_result) == 0) {
+            if (isset($_GET["member_id"]) && !empty($_GET["member_id"])) {
+                require_once("settings.php");
+                $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
+                if (!$conn) {
                     echo "<script type='text/javascript' src='./scripts/salesreportdialog.js'></script>";
                     exit();
                 } else {
-                    $row = mysqli_fetch_assoc($user_result);
+                    $member_id = $_GET["member_id"];
+                    $user_query =  "SELECT * FROM member WHERE member_id = '$member_id'";
+
+                    $user_result = mysqli_query($conn, $user_query);
+                    if (!$user_result) {
+                        echo "<script type='text/javascript' src='./scripts/salesreportdialog.js'></script>";
+                        exit();
+                    } else if (mysqli_num_rows($user_result) == 0) {
+                        echo "<script type='text/javascript' src='./scripts/salesreportdialog.js'></script>";
+                        exit();
+                    } else {
+                        $row = mysqli_fetch_assoc($user_result);
+                    }
                 }
             }
         ?>
