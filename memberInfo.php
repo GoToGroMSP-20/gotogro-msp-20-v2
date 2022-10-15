@@ -13,9 +13,8 @@
     </head>
 
     <body>
-        <?php
-        include_once("navbar.inc");
-        ?>
+        <?php include_once("navbar.inc"); ?>
+        <main>
         <div class="memberinfo" id="memberinfo">
             <form method="post" action="searchMEMBER.php" novalidate="novalidate">
                 <div class="inputField">
@@ -47,6 +46,7 @@
             </dialog>
 
         </div>
+        </main>
     </body>
     <?php
         if (isset($_GET['member_id']) && !empty($_GET["member_id"])) {
