@@ -73,6 +73,30 @@ if (isset($_POST["submit"])) {
                             exit();
                         }
                     }
+                    if (isset($_POST["quantity3"]) && !empty($_POST["quantity3"])) {
+                        $product_ID3 = sanitise_input($_POST["product_ID3"]);
+                        $quantity3 = sanitise_input($_POST["quantity3"]);
+                        $query = "INSERT INTO TransactionOrder (transaction_id, product_id, quantity ) VALUES('$last_id','$product_ID3', '$quantity3');";
+                        $insert_result = mysqli_query($conn, $query);
+                        // checks if the execution was successful
+                        if (!$insert_result) {
+                            echo "<p>Something is wrong with ", $query, "</p>";
+                            header("location: addOrder.php?order=invalid_query");
+                            exit();
+                        }
+                    }
+                    if (isset($_POST["quantity4"]) && !empty($_POST["quantity4"])) {
+                        $product_ID4 = sanitise_input($_POST["product_ID4"]);
+                        $quantity4 = sanitise_input($_POST["quantity4"]);
+                        $query = "INSERT INTO TransactionOrder (transaction_id, product_id, quantity ) VALUES('$last_id','$product_ID4', '$quantity4');";
+                        $insert_result = mysqli_query($conn, $query);
+                        // checks if the execution was successful
+                        if (!$insert_result) {
+                            echo "<p>Something is wrong with ", $query, "</p>";
+                            header("location: addOrder.php?order=invalid_query");
+                            exit();
+                        }
+                    }
                 }
             }
             // close the database connection
