@@ -41,7 +41,7 @@ function show_total() {
   if (
     product_ID1 != "placeholder" &&
     !r1_qty == "" &&
-    product_ID2 != "placeholder" &&
+    product_ID2 != "placeholder2" &&
     !r2_qty == ""
   ) {
     r3.style.display = "flex";
@@ -69,9 +69,9 @@ function show_total() {
   if (
     product_ID1 != "placeholder" &&
     !r1_qty == "" &&
-    product_ID2 != "placeholder" &&
+    product_ID2 != "placeholder2" &&
     !r2_qty == "" &&
-    product_ID3 != "placeholder" &&
+    product_ID3 != "placeholder3" &&
     !r3_qty == ""
   ) {
     r4.style.display = "flex";
@@ -99,11 +99,11 @@ function show_total() {
   if (
     product_ID1 != "placeholder" &&
     !r1_qty == "" &&
-    product_ID2 != "placeholder" &&
+    product_ID2 != "placeholder2" &&
     !r2_qty == "" &&
-    product_ID3 != "placeholder" &&
+    product_ID3 != "placeholder3" &&
     !r3_qty == "" &&
-    product_ID4 != "placeholder" &&
+    product_ID4 != "placeholder4" &&
     !r4_qty == ""
   ) {
     if (product_ID4 == "1") {
@@ -143,8 +143,11 @@ function validate() {
   var member_id = document.getElementById("member_id").value.trim();
   var result = true;
   if (
-    (product_ID4 == "placeholder" && r4_qty != "") ||
-    (product_ID4 != "placeholder" && r4_qty == "")
+    (product_ID4 == "placeholder4" && r4_qty != "") ||
+    (product_ID4 != "placeholder4" && r4_qty == "") ||
+    product_ID4 == product_ID3 ||
+    product_ID4 == product_ID2 ||
+    product_ID4 == product_ID1
   ) {
     document.getElementById("row_4").classList.add("invalid");
     result = false;
@@ -153,8 +156,10 @@ function validate() {
     document.getElementById("row_4").classList.add("valid");
   }
   if (
-    (product_ID3 == "placeholder" && r3_qty != "") ||
-    (product_ID3 != "placeholder" && r3_qty == "")
+    (product_ID3 == "placeholder3" && r3_qty != "") ||
+    (product_ID3 != "placeholder3" && r3_qty == "") ||
+    product_ID3 == product_ID2 ||
+    product_ID3 == product_ID1
   ) {
     document.getElementById("row_33").classList.add("invalid");
     result = false;
@@ -163,8 +168,9 @@ function validate() {
     document.getElementById("row_33").classList.add("valid");
   }
   if (
-    (product_ID2 == "placeholder" && r2_qty != "") ||
-    (product_ID2 != "placeholder" && r2_qty == "")
+    (product_ID2 == "placeholder2" && r2_qty != "") ||
+    (product_ID2 != "placeholder2" && r2_qty == "") ||
+    product_ID2 == product_ID1
   ) {
     document.getElementById("row_2").classList.add("invalid");
     result = false;

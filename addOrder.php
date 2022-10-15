@@ -54,7 +54,7 @@
                     <div class="inputField">
                         <label for="product_ID2">Product Name</label>
                         <select name="product_ID2" id="product_ID2" onblur="show_total()">
-                            <option value="placeholder" hidden>Please Select</option>
+                            <option value="placeholder2" hidden>Please Select</option>
                             <option value="1">Cheese</option>
                             <option value="11">Milk</option>
                             <option value="21">Cereal</option>
@@ -86,7 +86,7 @@
                     <div class="inputField">
                         <label for="product_ID3">Product Name</label>
                         <select name="product_ID3" id="product_ID3" onblur="show_total()">
-                            <option value="placeholder" hidden>Please Select</option>
+                            <option value="placeholder3" hidden>Please Select</option>
                             <option value="1">Cheese</option>
                             <option value="11">Milk</option>
                             <option value="21">Cereal</option>
@@ -118,7 +118,7 @@
                     <div class="inputField">
                         <label for="product_ID4">Product Name</label>
                         <select name="product_ID4" id="product_ID4" onblur="show_total()">
-                            <option value="placeholder" hidden>Please Select</option>
+                            <option value="placeholder4" hidden>Please Select</option>
                             <option value="1">Cheese</option>
                             <option value="11">Milk</option>
                             <option value="21">Cereal</option>
