@@ -34,12 +34,12 @@
         $transaction_id = $_GET['transaction_id'];
         //echo $transaction_id;
     } else {
-        echo "<dialog class='error' id='error'>
+        echo "<dialog class='fetchingData'>
         <div class='popup-status'>
         <br >
             <p>Fetching Data.......</p>
         </div></dialog>";
-        echo "<script>document.getElementById('error').classList.add('show');</script>";
+        echo "<script>document.querySelector('dialog.fetchingData').showModal();</script>";
         exit();
     }
     $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
@@ -117,7 +117,7 @@
                                 <td id=3>{$row['quantity']}</td>
                                 <td id=4>{$row['price']}</td>
                                 <td id=5>{$row['amount']}</td>
-                                <td><button class='editbutton'id=" . $count . " onClick='storeDetails(this.id)'>Edit</button></td>
+                                <td><a class='genericLink'id=" . $count . " onClick='storeDetails(this.id)'>Edit</a></td>
                                 
                             </tr>\n";
                     $count++;

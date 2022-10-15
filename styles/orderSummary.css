@@ -57,12 +57,3 @@ td {
   flex-direction: column;
   align-items: flex-end;
 }
-.editbutton {
-  font-family: "Menlo", "Monaco";
-  font-size: 1.125rem;
-  border: none;
-  background: none;
-}
-#error {
-  margin-top: 400px;
-}
