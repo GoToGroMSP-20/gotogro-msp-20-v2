@@ -1,0 +1,11 @@
+.orderHistory {
+    padding-top: 2rem;
+}
+
+.viewLink, .viewLink:visited {
+    color:var(--clr-white);
+}
+
+.viewLink:hover {
+    color:var(--clr-primary);
+}
