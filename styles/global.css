@@ -33,11 +33,47 @@ h3 {
   padding-bottom: 0.5rem;
 }
 
-table,
-th,
+table {
+  display: flex;
+  flex-direction: column;
+  max-height: 741px;
+}
+
+thead {
+  background: var(--clr-secondary_2);
+  border-bottom: 2px solid var(--clr-white);
+  width: fit-content;
+}
+
+tbody {
+  background: var(--clr-secondary_3);
+  overflow: auto;  
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+  width: fit-content;
+}
+
+tbody::-webkit-scrollbar {
+  display: none;
+}
+
+th, td {
+  padding: 12px 16px;
+  width: 13.5rem;
+  text-align: left;
+}
+
 td {
   font-family: "Inconsolata";
   font-size: 1.125rem;
+}
+
+.genericLink, .genericLink:visited {
+  color:var(--clr-white);
+}
+
+.genericLink:hover {
+  color:var(--clr-primary);
 }
 
 body,
@@ -52,5 +88,5 @@ button {
 }
 
 main {
-  margin-left: 13.5rem;
+  padding: 3rem 0 0 22.5rem;
 }

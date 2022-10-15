@@ -12,9 +12,8 @@
 </head>
 
 <body>
-    <?php
-    include_once("navbar.inc");
-    ?>
+    <?php include_once("navbar.inc"); ?>
+    <main>
     <div class="addorder" id="addorder">
         <h1 class="white-text">Add New Order</h1>
         <form method="post" action="processORDER.php" id="form" id="apply" novalidate="novalidate">
@@ -119,6 +118,7 @@
             <button class="button" onclick="location.href = 'addOrder.php';" buttonType="primary" type="submit"
                 name="submit">Back to Add Order</button>
         </dialog>
+    </main>
 </body>
 <?php
 if (isset($_GET['order']) && !empty($_GET["order"])) {

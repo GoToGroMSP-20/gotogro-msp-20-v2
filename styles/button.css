@@ -1,32 +1,45 @@
 .button {
+    font-size: 1rem;
+    box-sizing: border-box;
     color: white;
     padding: 12px 24px;
     border: none;
     border-radius: 7px;
     font-weight: 600;
-  }
+}
   
-  .button[buttonType="primary"] {
+.button[buttonType="primary"] {
     background-color: var(--clr-primary_2);
-  }
+}
   
-  .button[buttonType="secondary"] {
+.button[buttonType="secondary"] {
     color: var(--clr-primary);
-    border: 2px solid var(--clr-primary);
+    box-shadow: 0 0 0 2px var(--clr-primary) inset;
     background-color: hsla(0, 0%, 0%, 0);
-  }
+}
   
-  .button[disabled] {
+.button[disabled] {
     color: var(--clr-placeholder);
     background-color: var(--clr-disabled);
-  }
+}
   
-  .button[buttonType="primary"]:hover,
-  .button[buttonType="secondary"]:hover {
+.button[buttonType="primary"]:hover,
+.button[buttonType="secondary"]:hover {
     cursor: pointer;
     background-color: var(--clr-primary_3);
-  }
+}
   
-  .button[disabled]:hover {
+.button[disabled]:hover {
     cursor: not-allowed;
-  }
+}
+
+button[buttonType="error"] {
+    color: var(--clr-error);
+    border: 2px solid var(--clr-error);
+    background-color: hsla(0, 0%, 0%, 0);
+}
+
+button[buttonType="error"]:hover {
+    cursor: pointer;
+    background-color: #5B130B;
+}
