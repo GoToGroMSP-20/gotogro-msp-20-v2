@@ -15,7 +15,9 @@
 .inputField input,
 .inputField select,
 #amount1,
-#amount2 {
+#amount2,
+#amount3,
+#amount4 {
   background-color: hsla(0, 0%, 0%, 0);
   color: var(--clr-white);
   padding: 12px 16px;
@@ -61,7 +63,9 @@
 
 /* Add Input Field */
 
-#row_2 {
+#row_2,
+#row_33,
+#row_4 {
   display: none;
   flex-direction: row;
 }
@@ -75,7 +79,7 @@
   margin-bottom: 0.3rem;
 }
 #row_1,
-#row_3,
+#row_5,
 #emember {
   display: flex;
   flex-direction: row;
