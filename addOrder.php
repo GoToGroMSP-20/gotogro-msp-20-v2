@@ -21,7 +21,7 @@
             <div id="row_1">
                 <div class="inputField">
                     <label for="product_ID1">Product Name</label>
-                    <select name="product_ID1" id="product_ID1">
+                    <select name="product_ID1" id="product_ID1" onblur="show_total()">
                         <option value="placeholder" hidden>Please Select</option>
                         <option value="1">Cheese</option>
                         <option value="11">Milk</option>
@@ -54,7 +54,7 @@
             <div id="row_2">
                 <div class="inputField">
                     <label for="product_ID2">Product Name</label>
-                    <select name="product_ID2" id="product_ID2">
+                    <select name="product_ID2" id="product_ID2" onblur="show_total()">
                         <option value="placeholder" hidden>Please Select</option>
                         <option value="1">Cheese</option>
                         <option value="11">Milk</option>
