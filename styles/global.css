@@ -68,6 +68,14 @@ td {
   font-size: 1.125rem;
 }
 
+.genericLink, .genericLink:visited {
+  color:var(--clr-white);
+}
+
+.genericLink:hover {
+  color:var(--clr-primary);
+}
+
 body,
 input,
 textarea,

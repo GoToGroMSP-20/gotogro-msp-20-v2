@@ -65,8 +65,8 @@
                 </div>
 
                 <div class="buttons">
-                    <button class="button" buttonType="error" type="reset" name="delete">Delete Member</button>
-                    <button class="button" buttonType="primary" type="submit" name="edit">Edit Details</button>
+                    <button class="button" onclick="location.href = 'deleteMember.php';" buttonType="error" type="reset" name="delete">Delete Member</button>
+                    <button class="button" onclick="location.href = 'editMember.php';" buttonType="primary" type="submit" name="edit">Edit Details</button>
                 </div>
 
             </form>
@@ -115,7 +115,7 @@
                                         <td>{$row['transaction_id']}</td>
                                         <td>{$row['date_purchased']}</td>
                                         <td>\${$row['totalPrice']}</td>
-                                        <td><a class='viewLink' href='orderHistory.php?transaction_id={$row['transaction_id']}'>View</a></td>
+                                        <td><a class='genericLink' href='orderHistory.php?transaction_id={$row['transaction_id']}'>View</a></td>
                                     </tr>\n";
                                 }
                             echo
