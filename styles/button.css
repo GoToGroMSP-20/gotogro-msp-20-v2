@@ -30,3 +30,14 @@
   .button[disabled]:hover {
     cursor: not-allowed;
   }
+
+button[buttonType="error"] {
+  color: var(--clr-error);
+  border: 2px solid var(--clr-error);
+  background-color: hsla(0, 0%, 0%, 0);
+}
+
+button[buttonType="error"]:hover {
+  cursor: pointer;
+  background-color: #5B130B;
+}
