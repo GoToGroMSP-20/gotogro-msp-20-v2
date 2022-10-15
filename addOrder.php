@@ -12,16 +12,15 @@
 </head>
 
 <body>
-    <?php
-    include_once("navbar.inc");
-    ?>
+    <?php include_once("navbar.inc"); ?>
+    <main>
     <div class="addorder" id="addorder">
         <h1 class="white-text">Add New Order</h1>
         <form method="post" action="processORDER.php" id="form" id="apply" novalidate="novalidate">
             <div id="row_1">
                 <div class="inputField">
                     <label for="product_ID1">Product Name</label>
-                    <select name="product_ID1" id="product_ID1">
+                    <select name="product_ID1" id="product_ID1" onblur="show_total()">
                         <option value="placeholder" hidden>Please Select</option>
                         <option value="1">Cheese</option>
                         <option value="11">Milk</option>
@@ -54,7 +53,7 @@
             <div id="row_2">
                 <div class="inputField">
                     <label for="product_ID2">Product Name</label>
-                    <select name="product_ID2" id="product_ID2">
+                    <select name="product_ID2" id="product_ID2" onblur="show_total()">
                         <option value="placeholder" hidden>Please Select</option>
                         <option value="1">Cheese</option>
                         <option value="11">Milk</option>
@@ -119,6 +118,7 @@
             <button class="button" onclick="location.href = 'addOrder.php';" buttonType="primary" type="submit"
                 name="submit">Back to Add Order</button>
         </dialog>
+    </main>
 </body>
 <?php
 if (isset($_GET['order']) && !empty($_GET["order"])) {
