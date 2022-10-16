@@ -13,6 +13,16 @@
     </head>
 
     <body>
+
+        <!-- Error dialog -->
+        <dialog class="error" id="error">
+            <div class="popup-status">
+                <?php echo file_get_contents("./assets/icons/FaTimesCircle.svg"); ?>
+                <p>Oops! Something broke from our end. Please contact our technicians for support (Error code: 500)</p>
+                <button class="button" onclick="location.href = 'memberInfo.php';" buttonType="primary" name="search member">Back to Search Member</button>
+            </div>
+        </dialog>
+
         <?php include_once("navbar.inc"); ?>
         <main>
         <div class="memberinfo" id="memberinfo">
@@ -35,16 +45,6 @@
                     </div>
                 </div>
             </form>
-            
-            <!-- Error dialog -->
-            <dialog class="error" id="error">
-                <div class="popup-status">
-                    <?php echo file_get_contents("./assets/icons/FaTimesCircle.svg"); ?>
-                    <p>Oops! Something broke from our end. Please contact our technicians for support (Error code: 500)</p>
-                </div>
-                <button class="button" onclick="location.href = 'memberInfo.php';" buttonType="primary" name="search member">Back to Search Member</button>
-            </dialog>
-
         </div>
         </main>
     </body>
@@ -53,7 +53,7 @@
             $member_id = $_GET['member_id'];
             //echo $member_id;
             if ($member_id == "empty" ||  $member_id == "invalid" ||  $member_id == "invalid_query" ||  $member_id == "connection_failure") {
-                echo "<script>document.getElementById('error').classList.add('show');</script>";
+                echo "<script>document.getElementById('error').showModal();</script>";
             }
         }
     ?>

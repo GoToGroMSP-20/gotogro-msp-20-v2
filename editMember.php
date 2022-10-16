@@ -19,7 +19,7 @@
                 <p>Edit successful</p>
             </div>
             <div class="dialogButtons">
-                <button class="button" onclick="location.href = 'memberinfo.php';" buttonType="secondary" type="submit"
+                <button class="button" onclick="location.href = 'memberInfo.php';" buttonType="secondary" type="submit"
                     name="submit">Search a Member</button>
                 <button class="button" onclick="location.href = 'index.php';" buttonType="primary" type="submit"
                     name="submit">Add an Order</button>
@@ -79,45 +79,49 @@
     
     <?php include_once("navbar.inc"); ?>
     <main>
-        <form method="post" action="updateMEMBER.php" class="editMemberform">
+        <div class="editMember" id="editMember">
+            <a class="back-item" onclick="window.history.go(-1); return false;">
+                <?php echo file_get_contents("./assets/icons/FiArrowLeft.svg"); ?> Member Details
+            </a>
+            <form method="post" action="updateMEMBER.php" class="editMemberform">
+                <div class="editFormInput">
+                    <h3>Edit Member Form</h3>
+                </div>
 
-            <div class="editFormInput">
-                <h3>Edit Member Form</h3>
-            </div>
+                <div class="editFormInput">
+                    <label for="firstname" id="fName">First Name</label>
+                    <?php echo"<input type='text' pattern='[a-zA-Z]{2,20}' id='firstname' name='firstname' required value={$row['firstName']} />" ?>
+                </div>
 
-            <div class="editFormInput">
-                <label for="firstname" id="fName">First Name</label>
-                <?php echo"<input type='text' pattern='[a-zA-Z]{2,20}' id='firstname' name='firstname' required value={$row['firstName']} />" ?>
-            </div>
+                <div class="editFormInput">
+                    <label for="lastname" id="lName">Last Name</label>
+                    <?php echo"<input type='text' pattern='[a-zA-Z]{2,20}' id='lastname' name='lastname' required value={$row['lastName']} />" ?>
+                </div>
 
-            <div class="editFormInput">
-                <label for="lastname" id="lName">Last Name</label>
-                <?php echo"<input type='text' pattern='[a-zA-Z]{2,20}' id='lastname' name='lastname' required value={$row['lastName']} />" ?>
-            </div>
+                <div class="editFormInput">
+                    <label for="DateofBirth" id="dob">Date of Birth</label>
+                    <?php echo"<input type='date' min='1900-01-01' max='2100-01-01' name='dateofbirth' id='dateofbirth' required value={$row['dob']} />" ?>
+                </div>
 
-            <div class="editFormInput">
-                <label for="DateofBirth" id="dob">Date of Birth</label>
-                <?php echo"<input type='text' min='1900-01-01' max='2100-01-01' name='dateofbirth' id='dateofbirth' required placeholder='YYYY-MM-DD' value={$row['dob']} />" ?>
-            </div>
+                <div class="editFormInput">
+                    <label for="email" id="em">Email</label>
+                    <?php echo"<input type='email' id='email' name='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$' value={$row['email']} required />" ?>
+                </div>
 
-            <div class="editFormInput">
-                <label for="email" id="em">Email</label>
-                <?php echo"<input type='email' id='email' name='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$' value={$row['email']} required />" ?>
-            </div>
+                <div class="editFormInput">
+                    <label for="phonenum" id="mobilenum">Mobile Number (Optional)</label>
+                    <?php echo"<input type='tel' name='phonenum' id='phonenum' maxlength='10' pattern='[\d]{10}' placeholder='For eg. 0400000000' value={$row['mobile']} />" ?>
 
-            <div class="editFormInput">
-                <label for="phonenum" id="mobilenum">Mobile Number (Optional)</label>
-                <?php echo"<input type='tel' name='phonenum' id='phonenum' maxlength='10' pattern='[\d]{10}' placeholder='For eg. 0400000000' value={$row['mobile']} />" ?>
+                    <!-- Temp MEMBER ID -->
+                    <?php echo"<input type='hidden' name='member_id' id='member_id' value={$row['member_id']} />" ?>
 
-                <!-- Temp MEMBER ID -->
-                <?php echo"<input type='hidden' name='member_id' id='member_id' value={$row['member_id']} />" ?>
-
-            </div>
-            <div class="editMemberButtons">
-                <button class="button" id=button2 buttonType="secondary" type="reset" name="cancel">Cancel</button>
-                <button class="button" id=button1 buttonType="primary" type="submit" name="submit">Save Details</button>
-            </div>
-        </form>
+                </div>
+                <div class="editMemberButtons">
+                    <button class="button" id=button2 buttonType="secondary" type="reset" name="cancel" onclick="window.history.go(-1); return false;">Cancel</button>
+                    <button class="button" id=button1 buttonType="primary" type="submit" name="submit">Save Details</button>
+                </div>
+            </form>
+        </div>
     </main>
 </body>
 

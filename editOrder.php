@@ -18,9 +18,8 @@
         <div class="popup-status">
             <?php echo file_get_contents("./assets/icons/FaCheckCircle.svg"); ?>
             <p>Submission successful</p>
+            <button class="button" onclick="location.href = 'orderSummary.php';" buttonType="primary" type="submit" name="submit">Back to Order Summary</button>
         </div>
-        <button class="button" onclick="location.href = 'orderSummary.php';" buttonType="primary" type="submit"
-            name="submit">Back to Order Summary</button>
     </dialog>
 
     <!-- Error dialog -->
@@ -28,9 +27,8 @@
         <div class="popup-status">
             <?php echo file_get_contents("./assets/icons/FaTimesCircle.svg"); ?>
             <p>Oops! Something broke from our end. Please contact our technicians for support (Error code: 500)</p>
+            <button class="button" onclick="location.href = 'orderSummary.php';" buttonType="primary" type="submit" name="submit">Back to Order Summary</button>
         </div>
-        <button class="button" onclick="location.href = 'orderSummary.php';" buttonType="primary" type="submit"
-            name="submit">Back to Order Summary</button>
     </dialog>
 
     <!-- Display dialog accordingly -->

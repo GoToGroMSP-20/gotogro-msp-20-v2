@@ -30,9 +30,8 @@
             <?php echo file_get_contents("./assets/icons/FaTimesCircle.svg"); ?>
             <p>Oops! Something broke from our end. Please contact our technicians for support (Error code: 500)
             </p>
+            <button class="button" onclick="location.href = 'addOrder.php';" buttonType="primary" type="submit" name="submit">Back to Add Order</button>
         </div>
-        <button class="button" onclick="location.href = 'addOrder.php';" buttonType="primary" type="submit"
-            name="submit">Back to Add Order</button>
     </dialog>
     
     <!-- Display dialog accordingly -->

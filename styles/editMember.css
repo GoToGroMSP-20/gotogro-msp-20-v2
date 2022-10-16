@@ -26,3 +26,8 @@
   padding-top: 1.5rem;
   align-self: flex-end;
 }
+
+.editMember h3 {
+  margin-top: 40px;
+}
+
