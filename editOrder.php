@@ -12,9 +12,41 @@
 </head>
 
 <body>
+    
+    <!-- Success dialog -->
+    <dialog class="success" id="success">
+        <div class="popup-status">
+            <?php echo file_get_contents("./assets/icons/FaCheckCircle.svg"); ?>
+            <p>Submission successful</p>
+        </div>
+        <button class="button" onclick="location.href = 'orderSummary.php';" buttonType="primary" type="submit"
+            name="submit">Back to Order Summary</button>
+    </dialog>
+
+    <!-- Error dialog -->
+    <dialog class="error" id="error">
+        <div class="popup-status">
+            <?php echo file_get_contents("./assets/icons/FaTimesCircle.svg"); ?>
+            <p>Oops! Something broke from our end. Please contact our technicians for support (Error code: 500)</p>
+        </div>
+        <button class="button" onclick="location.href = 'orderSummary.php';" buttonType="primary" type="submit"
+            name="submit">Back to Order Summary</button>
+    </dialog>
+
+    <!-- Display dialog accordingly -->
     <?php
-    include_once("navbar.inc");
+        if (isset($_GET['order']) && !empty($_GET["order"])) {
+            $order = $_GET['order'];
+            //echo $order;
+            if ($order == "empty" ||  $order == "invalid" ||  $order == "invalid_query" ||  $order == "connection_failure" ||  $order == "invalid_id" || $order == "invalid_member_id") {
+                echo "<script>document.getElementById('error').showModal();</script>";
+            } else if ($order == "success") {
+                echo "<script>document.getElementById('success').showModal();</script>";
+            }
+        }
     ?>
+
+    <?php include_once("navbar.inc"); ?>
     <div class="editorder" id="editorder">
         <div>
             <a class="back-item" href="orderSummary.php">
@@ -60,38 +92,8 @@
                 </div>
             </div>
         </form>
-        <!-- Success dialog -->
-        <dialog class="success" id="success">
-            <div class="popup-status">
-                <?php echo file_get_contents("./assets/icons/FaCheckCircle.svg"); ?>
-                <p>Submission successful</p>
-            </div>
-            <button class="button" onclick="location.href = 'orderSummary.php';" buttonType="primary" type="submit"
-                name="submit">Back to Order Summary</button>
-        </dialog>
-
-        <!-- Error dialog -->
-        <dialog class="error" id="error">
-            <div class="popup-status">
-                <?php echo file_get_contents("./assets/icons/FaTimesCircle.svg"); ?>
-                <p>Oops! Something broke from our end. Please contact our technicians for support (Error code: 500)</p>
-            </div>
-            <button class="button" onclick="location.href = 'orderSummary.php';" buttonType="primary" type="submit"
-                name="submit">Back to Order Summary</button>
-        </dialog>
+    </div>
 </body>
-<?php
-
-if (isset($_GET['order']) && !empty($_GET["order"])) {
-    $order = $_GET['order'];
-    //echo $order;
-    if ($order == "empty" ||  $order == "invalid" ||  $order == "invalid_query" ||  $order == "connection_failure" ||  $order == "invalid_id" || $order == "invalid_member_id") {
-        echo "<script>document.getElementById('error').classList.add('show');</script>";
-    } else if ($order == "success") {
-        echo "<script>document.getElementById('success').classList.add('show');</script>";
-    }
-}
-?>
 <script type="text/javascript" src="/scripts/navbar.js"></script>
 
 </html>
