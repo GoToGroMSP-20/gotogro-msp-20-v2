@@ -36,6 +36,9 @@
         <?php include_once("navbar.inc"); ?>
         <main>
             <form method="post" action="deleteMEMBER.php" class="memberDetailsform">
+                <a class="back-item" onclick="window.history.go(-1); return false;">
+                    <?php echo file_get_contents("./assets/icons/FiArrowLeft.svg"); ?> Member Search
+                </a>
                 <?php echo "<h1>{$row['firstName']} {$row['lastName']}</h1>" ?>
                 <h3>Member Details</h3>
                 <div class="memberDetailsContainer">
