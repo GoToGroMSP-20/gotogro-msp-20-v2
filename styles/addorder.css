@@ -13,19 +13,19 @@
 }
 
 .inputField input,
-.inputField select,
-#amount1,
-#amount2,
-#amount3,
-#amount4 {
+.inputField select {
   background-color: hsla(0, 0%, 0%, 0);
   color: var(--clr-white);
   padding: 12px 16px;
-  margin: 4px 8px;
   box-sizing: border-box;
   width: 200px;
   height: 43px;
   border-radius: 7px;
+}
+
+.amount {
+  width: fit-content;
+  padding: 12px 0;
 }
 
 .inputField input,
@@ -82,26 +82,35 @@
 #row_5,
 #emember {
   display: flex;
-  flex-direction: row;
 }
-#member_id {
-  margin-right: 1rem;
+
+#row_5 {
+  flex-direction: column;
 }
-#member_id {
-  width: 600px;
+
+.row {
+  gap: 1rem;
 }
+
+.inputField.price {
+  align-items: flex-end;
+  flex-grow: 10;
+}
+
 .inputField select {
   width: 300px;
 }
 #total_price {
-  margin-left: 450px;
+  align-self: flex-end;
   font-size: 24px;
   font-weight: 400;
 }
 
-#addordersubmit {
-  margin-left: 500px;
+.inputField.member_id input {
+  width: 100%;
+  margin: 0;
 }
-.show {
-  display: flex;
+
+#addordersubmit {
+  align-self: flex-end;
 }

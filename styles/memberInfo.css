@@ -1,0 +1,8 @@
+#emember #row_1 input {
+    width: 600px;
+}
+
+#emember #row_1 {
+    display: flex;
+    gap: 1rem;
+}
