@@ -12,10 +12,6 @@
 </head>
 
 <body>
-    <form method="GET" action="orderSummary.php" id="ssdata">
-        <input type="hidden" name="transaction_id" id="transaction_id" />
-    </form>
-
     <!-- Error dialog -->
     <dialog class="error">
         <div class="popup-status">
@@ -84,6 +80,7 @@
     }
     ?>
     <main>
+        <?php echo"<input type='hidden' name='transaction_id' id='transaction_id' value=$transaction_id>" ?>
         <div class="orderSummary" id="orderSummary">
             <a class="back-item" href="/memberDetails.php">
                 <?php echo file_get_contents("./assets/icons/FiArrowLeft.svg"); ?> Member Details
