@@ -97,7 +97,7 @@
 
             <div class="editFormInput">
                 <label for="DateofBirth" id="dob">Date of Birth</label>
-                <?php echo"<input type='text' min='1900-01-01' max='2100-01-01' name='dateofbirth' id='dateofbirth' required placeholder='YYYY-MM-DD' value={$row['dob']} />" ?>
+                <?php echo"<input type='date' min='1900-01-01' max='2100-01-01' name='dateofbirth' id='dateofbirth' required value={$row['dob']} />" ?>
             </div>
 
             <div class="editFormInput">
