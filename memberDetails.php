@@ -63,7 +63,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="editOrderButtons">
+                <div class="memberDetailsDialogButtons">
                     <?php echo"<button class='button' onclick=\"location.href = 'deleteMEMBER.php';\" buttonType='error' type='submit' name='delete'>Delete Member</button>" ?>
                     <?php echo"<button class='button' onclick=\"location.href = 'editMember.php?member_id={$row['member_id']}';\" buttonType='primary' type='button' name='edit'>Edit Details</button>" ?>
                 </div>

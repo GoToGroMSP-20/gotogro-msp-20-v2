@@ -113,7 +113,7 @@
                 <?php echo"<input type='hidden' name='member_id' id='member_id' value={$row['member_id']} />" ?>
 
             </div>
-            <div>
+            <div class="editMemberButtons">
                 <button class="button" id=button2 buttonType="secondary" type="reset" name="cancel">Cancel</button>
                 <button class="button" id=button1 buttonType="primary" type="submit" name="submit">Save Details</button>
             </div>
