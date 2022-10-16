@@ -19,7 +19,7 @@
                 <p>Edit successful</p>
             </div>
             <div class="dialogButtons">
-                <button class="button" onclick="location.href = 'memberinfo.php';" buttonType="secondary" type="submit"
+                <button class="button" onclick="location.href = 'memberInfo.php';" buttonType="secondary" type="submit"
                     name="submit">Search a Member</button>
                 <button class="button" onclick="location.href = 'index.php';" buttonType="primary" type="submit"
                     name="submit">Add an Order</button>
