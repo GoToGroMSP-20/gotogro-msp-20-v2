@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
     <?php
     if (isset($_GET["member_id"]) && !empty($_GET["member_id"])) {
         require_once("settings.php");
@@ -31,11 +32,8 @@
             }
         }
     }
-    ?>
-
-    <?php include_once("navbar.inc"); ?>
-    <main>
-        <form method="post" action="deleteMEMBER.php" class="memberDetailsform">
+    ?> <?php include_once("navbar.inc"); ?> <main>
+        <form method="post" class="memberDetailsform">
             <a class="back-item" onclick="window.history.go(-1); return false;">
                 <?php echo file_get_contents("./assets/icons/FiArrowLeft.svg"); ?> Member Search
             </a>
@@ -68,30 +66,26 @@
             </div>
 
             <div class="memberDetailsDialogButtons">
-                <?php echo "<button class='button' onclick=\"location.href = 'deleteMEMBER.php';\" buttonType='error' type='submit' name='delete'>Delete Member</button>" ?>
+
+                <?php echo "<button class='button' onclick=\"location.href = 'memberDetails.php?member_id={$row['member_id']}&delete=valid';\" buttonType='error' type='button' name='delete'>Delete Member</button>" ?>
                 <?php echo "<button class='button' onclick=\"location.href = 'editMember.php?member_id={$row['member_id']}';\" buttonType='primary' type='button' name='edit'>Edit Details</button>" ?>
             </div>
-
             <!--  dialog -->
-            <dialog class="delete" id="delete">
+            <dialog class="delete" id="error">
                 <div class="popup-status">
                     <?php echo file_get_contents("./assets/icons/AiFillExclamationCircle.svg"); ?>
                     <p>Are you sure? Deleted member data will not be recoverable.</p>
                     <div class="deleteButtons">
-                        <button class="button" onclick="location.href = 'memberDetails.php';" buttonType="primary"
-                            type="submit" name="submit">Cancel</button>
-                        <button class="button" onclick="location.href = 'deleteMember.php';" buttonType="error"
-                            type="submit" name="dangerbutton" id="dangerbutton">Delete</button>
+                        <?php echo "<button class='button' onclick=\"location.href = 'memberDetails.php?member_id={$row['member_id']}';\" buttonType='primary' type='button'name='submit'>Cancel</button>" ?>
+                        <?php echo "<button class='button' onclick=\"location.href = 'deleteMEMBER.php?member_id={$row['member_id']}';\" buttonType='error' type='button' name='dangerbutton' id='dangerbutton'>Delete Member</button>" ?>
                     </div>
                 </div>
             </dialog>
 
             <?php
-            if (isset($_GET["dangerbutton"]) && !empty($_GET["dangerbutton"])) {
-                echo "<script>document.getElementById('delete').classList.add('show');</script>";
-                // // header("location: memberDetails.php?member=deleted");
+            if (isset($_GET["delete"]) && !empty($_GET["delete"]) && ($_GET["delete"] == "valid")) {
+                echo "<script>document.getElementById('error').showModal();</script>";
             } ?>
-
         </form>
         <div class="transactionHistory">
             <?php
@@ -151,6 +145,6 @@
         </div>
     </main>
 </body>
-<!-- <script type="text/javascript" src="/scripts/navbar.js"></script> -->
+<script type="text/javascript" src="/scripts/navbar.js"></script>
 
 </html>

@@ -8,8 +8,8 @@ function sanitise_input($data)
     return $data;
 }
 
-if (isset($_POST["member_id"]) && !empty($_POST["member_id"])) {
-    $member_id = $_POST["member_id"];
+if (isset($_GET["member_id"]) && !empty($_GET["member_id"])) {
+    $member_id = $_GET["member_id"];
     require_once("settings.php"); // DB connection info
 
     $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
@@ -17,13 +17,13 @@ if (isset($_POST["member_id"]) && !empty($_POST["member_id"])) {
     if (!$conn) {
         // Display error msg
         echo "<p>Database connection failure </p>";
-        header("location: memberDetails.php?member_id={$_POST['member_id']}&deleteMember=connection_failure");
+        header("location: memberDetails.php?member_id={$_GET['member_id']}&deleteMember=connection_failure");
         exit();
     } else {
         // Upon successful connection
         $user_query = "SELECT * FROM transaction WHERE member_id = '$member_id'
                        DELETE FROM Member WHERE member_id = '$member_id'";
-                       
+
         $user_result = mysqli_query($conn, $user_query);
         $row = mysqli_fetch_assoc($user_result);
         // checks if the execution was successful
