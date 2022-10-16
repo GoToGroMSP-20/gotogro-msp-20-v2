@@ -73,6 +73,7 @@ td {
 }
 
 .genericLink:hover {
+  cursor: pointer;
   color:var(--clr-primary);
 }
 
