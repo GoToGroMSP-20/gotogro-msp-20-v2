@@ -82,7 +82,7 @@
     <main>
         <?php echo"<input type='hidden' name='transaction_id' id='transaction_id' value=$transaction_id>" ?>
         <div class="orderSummary" id="orderSummary">
-            <a class="back-item" href="/memberDetails.php">
+            <a class="back-item" onclick="window.history.go(-1); return false;">
                 <?php echo file_get_contents("./assets/icons/FiArrowLeft.svg"); ?> Member Details
             </a>
             <div>
