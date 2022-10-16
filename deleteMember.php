@@ -29,7 +29,7 @@ if (isset($_POST["submit"])) {
             exit();
         } else {
             // Upon successful connection
-            $user_query = "DELETE FROM Member WHERE email = '$member_id'";
+            $user_query = "DELETE FROM Member WHERE member_id = '$member_id'";
             $user_result = mysqli_query($conn, $user_query);
             $row = mysqli_fetch_assoc($user_result);
             // checks if the execution was successful
