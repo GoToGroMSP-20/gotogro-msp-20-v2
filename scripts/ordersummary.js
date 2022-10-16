@@ -1,11 +1,11 @@
 function storeDetails(rowid) {
-  let productid =
-    document.getElementById("orders").rows[rowid].cells[0].innerHTML;
+  let transactionid = document.getElementById("transaction_id").value;
+  let productid = document.getElementById("orders").rows[rowid].cells[0].innerHTML;
   let name = document.getElementById("orders").rows[rowid].cells[1].innerHTML;
-  let quantity =
-    document.getElementById("orders").rows[rowid].cells[2].innerHTML;
+  let quantity = document.getElementById("orders").rows[rowid].cells[2].innerHTML;
   let price = document.getElementById("orders").rows[rowid].cells[3].innerHTML;
 
+  sessionStorage.transactionid = transactionid;
   sessionStorage.productid = productid;
   sessionStorage.name = name;
   sessionStorage.price = price;
@@ -17,25 +17,3 @@ function storeDetails(rowid) {
         "quantity: " + sessionStorage.quantity);*/
   location.href = "editOrder.php";
 }
-
-function prefill_form() {
-  if (sessionStorage.transactionid != undefined) {
-    document.getElementById("transaction_id").value =
-      sessionStorage.transactionid;
-  }
-}
-
-function init() {
-  // Used for Testing ----------------------------------------
-  let transactionid = 291;
-  sessionStorage.transactionid = transactionid;
-  //---------------------------------------------------------
-
-  prefill_form();
-  let url = window.location.href;
-  if (!url.includes("transaction_id")) {
-    document.getElementById("ssdata").submit();
-  }
-}
-
-window.addEventListener("load", init);

@@ -15,8 +15,12 @@
   gap: 0.5rem;
 }
 
-.memberDetailsform .buttons {
+.memberDetailsDialogButtons {
   display: flex;
   gap: 1rem;
   padding-top: 1.5rem;
+}
+
+.memberDetailsform h1 {
+  padding-top: 2rem;
 }

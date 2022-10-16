@@ -9,6 +9,11 @@
 }
 
 .back-item:hover {
-  text-decoration: underline;
+  cursor: pointer;
+  text-decoration: none;
   color: var(--clr-primary_3);
+}
+
+.back-item:hover path {
+  fill: var(--clr-primary_3);
 }

@@ -12,12 +12,10 @@
   line-height: 19px;
 }
 
-.inputField input,
-#amount {
+.inputField input {
   background-color: hsla(0, 0%, 0%, 0);
   color: var(--clr-white);
   padding: 12px 16px;
-  margin: 4px 8px;
   box-sizing: border-box;
   width: 200px;
   height: 43px;
@@ -55,26 +53,27 @@
 }
 
 .editorder {
-  padding-top: 4rem;
-  margin: auto;
   width: fit-content;
 }
 
 #submit {
   margin-bottom: 0.3rem;
 }
-#row_1,
-#row_3 {
-  line-height: 19px;
+.editorder #row_1,
+.editorder #row_3 {
   display: flex;
-  flex-direction: row;
+  gap: 1rem;
 }
+
+.editorder #row_3 {
+  justify-content: flex-end;
+}
+
 #product_name {
   border: 2px solid var(--clr-placeholder);
   width: 300px;
 }
 #editorderreset {
-  margin-left: 370px;
   text-decoration: none;
 }
 #editordersubmit {
@@ -82,7 +81,4 @@
 }
 #editorder h1 {
   margin-top: 40px;
-}
-.show {
-  display: flex;
 }

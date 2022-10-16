@@ -108,7 +108,7 @@ if (isset($_POST["submit"])) {
         // close the database connection
         mysqli_close($conn);
     }
-    header("location: editMember.php?member=success");
+    header("location: editMember.php?member_id={$row['member_id']}&member=success");
     exit();
 } else {
     header("location: editMember.php");

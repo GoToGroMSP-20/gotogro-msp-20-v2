@@ -1,6 +1,4 @@
 .editMemberform {
-  padding-left: 145px;
-  padding-top: 48px;
   display: flex;
   flex-direction: column;
   width: fit-content;
@@ -13,7 +11,6 @@
 
 .editFormInput input {
   width: 576px;
-  height: 43px;
   padding: 12px 16px;
   align-items: center;
   margin: 8px 0;
@@ -23,9 +20,14 @@
   box-sizing: border-box;
 }
 
-#button1 {
-  margin-left: 10px;
+.editMemberButtons {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  align-self: flex-end;
 }
-#button2 {
-  margin-left: 340px;
+
+.editMember h3 {
+  margin-top: 40px;
 }
+
