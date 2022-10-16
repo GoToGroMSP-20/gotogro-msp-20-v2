@@ -72,7 +72,6 @@
                 </div>
             </form>
             <div class="transactionHistory">
-            <h3 class="orderHistory">Order History</h3>
             <?php
                 if (isset($_GET["member_id"]) && !empty($_GET["member_id"])) {
                     $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
@@ -96,11 +95,12 @@
                             echo "<script type='text/javascript' src='./scripts/salesreportdialog.js'></script>";
                             exit();
                         } else if (mysqli_num_rows($user_result) == 0) {
-                            echo "<script type='text/javascript' src='./scripts/salesreportdialog.js'></script>";
+                            echo "<h3 class='orderHistory'>No orders have been made yet.</h3>";
                             exit();
                         } else {
                             echo
-                            "<table>
+                            "<h3 class='orderHistory'>Order History</h3>
+                            <table>
                                 <thead>
                                     <tr>
                                         <th>Transaction ID</th>
