@@ -30,8 +30,8 @@
                                 placeholder="Enter member's email"
                                 onblur="member_valid();"
                             />
+                            <button class="button" buttonType="primary" type="submit" name="submit" id="submit">Search</button>
                         </div>
-                        <button class="button" buttonType="primary" type="submit" name="submit" id="submit">Search</button>
                     </div>
                 </div>
             </form>
