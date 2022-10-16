@@ -65,9 +65,30 @@
                 </div>
 
                 <div class="buttons">
-                    <button class="button" onclick="location.href = 'deleteMember.php';" buttonType="error" type="reset" name="delete">Delete Member</button>
+                    <button class="button" onclick="location.href = 'deleteMember.php?dangerbutton=true';" buttonType="error" type="submit" name="delete">Delete Member</button>
                     <button class="button" onclick="location.href = 'editMember.php';" buttonType="primary" type="submit" name="edit">Edit Details</button>
                 </div>
+
+              <!--  dialog -->
+              <dialog class="delete" id="delete">
+                  <div class="popup-status">
+                      <?php echo file_get_contents("./assets/icons/AiFillExclamationCircle.svg"); ?>
+                      <p>Are you sure? Deleted member data will not be recoverable.</p>
+                      <div class="deleteButtons">
+                          <button class="button" onclick="location.href = 'memberDetails.php';" buttonType="primary" type="submit" name="submit">Cancel</button>
+                          <button class="button" onclick="location.href = 'deleteMember.php';" buttonType="error" type="submit" name="dangerbutton" id="dangerbutton" >Delete</button>
+                      </div>
+                  </div>
+              </dialog>
+
+              <?php 
+                if (isset($_GET["dangerbutton"]) && !empty($_GET["dangerbutton"])) {
+                 echo "<script>document.getElementById('delete').classList.add('show');</script>";
+                // // header("location: memberDetails.php?member=deleted");
+              } ?> 
+
+
+
 
             </form>
             <div class="transactionHistory">
@@ -128,6 +149,6 @@
             </div>
         </main>
     </body>
-    <script type="text/javascript" src="/scripts/navbar.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/navbar.js"></script> -->
 
 </html>
