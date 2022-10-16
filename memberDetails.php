@@ -65,7 +65,7 @@
                 </div>
             </form>
 
-            <div class="buttons">
+            <div class="editOrderButtons">
                 <button class="button" onclick="location.href = 'deleteMember.php';" buttonType="error" type="reset" name="delete">Delete Member</button>
                 <?php echo"<button class='button' onclick=\"location.href = 'editMember.php?member_id={$row['member_id']}';\" buttonType='primary' name='edit'>Edit Details</button>" ?>
             </div>

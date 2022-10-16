@@ -35,7 +35,7 @@
 
 button[buttonType="error"] {
     color: var(--clr-error);
-    border: 2px solid var(--clr-error);
+    box-shadow: 0 0 0 2px var(--clr-error) inset;
     background-color: hsla(0, 0%, 0%, 0);
 }
 
