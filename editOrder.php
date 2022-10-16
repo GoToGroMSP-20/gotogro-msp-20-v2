@@ -47,23 +47,38 @@
     ?>
 
     <?php include_once("navbar.inc"); ?>
-    <div class="editorder" id="editorder">
-        <div>
-            <a class="back-item" href="orderSummary.php">
-                <?php echo file_get_contents("./assets/icons/FiArrowLeft.svg"); ?> Order Summary
-            </a>
-        </div>
-        <h1>Edit Order Details</h1>
-        <form method="post" action="updateORDER.php" id="form" id="apply" novalidate="novalidate">
-            <div id="row_1">
-                <div class="inputField">
-                    <label for="product_name">Product Name</label>
-                    <input type="text" name="product_name" id="product_name" disabled>
+    <main>
+        <div class="editorder" id="editorder">
+            <div>
+                <a class="back-item" href="orderSummary.php">
+                    <?php echo file_get_contents("./assets/icons/FiArrowLeft.svg"); ?> Order Summary
+                </a>
+            </div>
+            <h1>Edit Order Details</h1>
+            <form method="post" action="updateORDER.php" id="form" id="apply" novalidate="novalidate">
+                <div id="row_1">
+                    <div class="inputField">
+                        <label for="product_name">Product Name</label>
+                        <input type="text" name="product_name" id="product_name" disabled>
+                    </div>
+                    <div class="inputField">
+                        <label for="quantity">Quantity </label>
+                        <input type="number" min="0" max="100" name="quantity" id="quantity" required="required"
+                            onblur="show_total()" />
+                    </div>
+                    <div class="inputField price">
+                        <label>Amount </label>
+                        <label id="amount" class="amount">$0.00</label>
+                        <br>
+                    </div>
                 </div>
-                <div class="inputField">
-                    <label for="quantity">Quantity </label>
-                    <input type="number" min="0" max="100" name="quantity" id="quantity" required="required"
-                        onblur="show_total()" />
+                <div id="row_3">
+                    <div>
+                        <a class="button" id="editorderreset" buttonType="secondary" href="orderSummary.php">Cancel</a>
+                        <button class="button" id="editordersubmit" buttonType="primary" type="submit" name="submit">Save
+                            Details</button>
+                        <br>
+                    </div>
                 </div>
                 <div class="inputField">
                     <input type="hidden" name="price" id="price">
@@ -77,22 +92,9 @@
                     <input type="hidden" name="order_id" id="order_id">
                     <br>
                 </div>
-                <div class="inputField">
-                    <label>Amount </label>
-                    <label id="amount">$0.00</label>
-                    <br>
-                </div>
-            </div>
-            <div id="row_3">
-                <div>
-                    <a class="button" id="editorderreset" buttonType="secondary" href="orderSummary.php">Cancel</a>
-                    <button class="button" id="editordersubmit" buttonType="primary" type="submit" name="submit">Save
-                        Details</button>
-                    <br>
-                </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
+    </main>
 </body>
 <script type="text/javascript" src="/scripts/navbar.js"></script>
 

@@ -51,23 +51,23 @@
             </div>
             <div class="form-input">
                 <label for="fname">First name:</label>
-                <input type="text" pattern="[a-zA-Z]{2,20}" id="fname" name="fname" required>
+                <input class="addMemberInput" type="text" pattern="[a-zA-Z]{2,20}" id="fname" name="fname" required>
             </div>
             <div class="form-input">
                 <label for="lname">Last name:</label>
-                <input type="text" pattern="[a-zA-Z]{2,20}" id="lname" name="lname" required>
+                <input class="addMemberInput" type="text" pattern="[a-zA-Z]{2,20}" id="lname" name="lname" required>
             </div>
             <div class="form-input">
                 <label for="date">Date of Birth:</label>
-                <input type="date" id="date" min='1900-01-01' max='2100-01-01' name="date" required>
+                <input class="addMemberInput" type="date" id="date" min='1900-01-01' max='2100-01-01' name="date" required>
             </div>
             <div class="form-input">
                 <label for="email">Email:</label>
-                <input type="text" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                <input class="addMemberInput" type="text" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
             </div>
             <div class="form-input">
                 <label for="mnumber">Mobile Number (Optional):</label>
-                <input type="text" id="mnumber" name="mnumber" maxlength="10" pattern="[\d]{10}"
+                <input class="addMemberInput" type="text" id="mnumber" name="mnumber" maxlength="10" pattern="[\d]{10}"
                     placeholder="For eg. 0400000000">
             </div>
             <div class="button addMember">
