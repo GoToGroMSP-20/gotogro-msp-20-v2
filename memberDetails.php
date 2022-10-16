@@ -35,13 +35,14 @@
 
         <?php include_once("navbar.inc"); ?>
         <main>
-            <form method="get" action="searchMEMBER.php" class="memberDetailsform">
+            <form method="post" action="deleteMEMBER.php" class="memberDetailsform">
                 <?php echo "<h1>{$row['firstName']} {$row['lastName']}</h1>" ?>
                 <h3>Member Details</h3>
                 <div class="memberDetailsContainer">
                     <div class="memberDetails">
                         <div class="detail">
                             <b><label for="memberID" id="memberid">Member ID</label></b>
+                            <?php echo "<input type='hidden' name='member_id' id='member_id' value={$row['member_id']} />" ?>
                             <?php echo "<p>{$row['member_id']}</p>" ?>
                         </div>
 
@@ -59,16 +60,14 @@
                         <div class="detail">
                             <b><label for="phonenum" id="mobilenum">Mobile Number</label></b>
                             <?php echo "<p>{$row['mobile']}</p>" ?>
-                            <input type="hidden" name="member_id" id="member_id" value="1" />
                         </div>
                     </div>
                 </div>
+                <div class="editOrderButtons">
+                    <?php echo"<button class='button' onclick=\"location.href = 'deleteMEMBER.php';\" buttonType='error' type='submit' name='delete'>Delete Member</button>" ?>
+                    <?php echo"<button class='button' onclick=\"location.href = 'editMember.php?member_id={$row['member_id']}';\" buttonType='primary' type='button' name='edit'>Edit Details</button>" ?>
+                </div>
             </form>
-
-            <div class="editOrderButtons">
-                <button class="button" onclick="location.href = 'deleteMember.php';" buttonType="error" type="reset" name="delete">Delete Member</button>
-                <?php echo"<button class='button' onclick=\"location.href = 'editMember.php?member_id={$row['member_id']}';\" buttonType='primary' name='edit'>Edit Details</button>" ?>
-            </div>
             <div class="transactionHistory">
             <h3 class="orderHistory">Order History</h3>
             <?php

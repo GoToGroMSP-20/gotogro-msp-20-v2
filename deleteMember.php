@@ -25,7 +25,7 @@ if (isset($_POST["submit"])) {
         if (!$conn) {
             // Display error msg
             echo "<p>Database connection failure </p>";
-            header("location: memberDetails.php?member=connection_failure");
+        header("location: memberDetails.php?member_id={$_POST['member_id']}&deleteMember=connection_failure");
             exit();
         } else {
             // Upon successful connection
@@ -36,7 +36,7 @@ if (isset($_POST["submit"])) {
             if (!$row) {
                 //echo User fail to delete
                 echo "<p class='manage_error'>User failed to be Deleted</p>";
-                header("location: memberDetails.php?member=invalid_query");
+            header("location: memberDetails.php?member_id={$_POST['member_id']}&deleteMember=invalid_query");
                 exit();
             }
             // close the database connection
@@ -46,8 +46,7 @@ if (isset($_POST["submit"])) {
         echo "<p class='manage_error'>User Deleted</p>";
         header("location: memberDetails.php?member=success");
         exit();
-    }
 } else {
-    header("location: memberDetails.php");
+    header("location: memberDetails.php?member_id={$_POST['member_id']}");
     exit();
 }
