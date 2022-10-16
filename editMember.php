@@ -117,7 +117,7 @@
 
                 </div>
                 <div class="editMemberButtons">
-                    <button class="button" id=button2 buttonType="secondary" type="reset" name="cancel">Cancel</button>
+                    <button class="button" id=button2 buttonType="secondary" type="reset" name="cancel" onclick="window.history.go(-1); return false;">Cancel</button>
                     <button class="button" id=button1 buttonType="primary" type="submit" name="submit">Save Details</button>
                 </div>
             </form>
