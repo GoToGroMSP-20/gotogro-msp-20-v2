@@ -63,13 +63,12 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="buttons">
-                    <button class="button" onclick="location.href = 'deleteMember.php';" buttonType="error" type="reset" name="delete">Delete Member</button>
-                    <button class="button" onclick="location.href = 'editMember.php';" buttonType="primary" type="submit" name="edit">Edit Details</button>
-                </div>
-
             </form>
+
+            <div class="buttons">
+                <button class="button" onclick="location.href = 'deleteMember.php';" buttonType="error" type="reset" name="delete">Delete Member</button>
+                <?php echo"<button class='button' onclick=\"location.href = 'editMember.php?member_id={$row['member_id']}';\" buttonType='primary' name='edit'>Edit Details</button>" ?>
+            </div>
             <div class="transactionHistory">
             <h3 class="orderHistory">Order History</h3>
             <?php
