@@ -15,12 +15,13 @@
     
     <!-- Success dialog -->
     <dialog class="success" id="success">
-        <div class="popup-status">
-            <?php echo file_get_contents("./assets/icons/FaCheckCircle.svg"); ?>
-            <p>Submission successful</p>
+        <div class="dialogContent">
+            <div class="popup-status">
+                <?php echo file_get_contents("./assets/icons/FaCheckCircle.svg"); ?>
+                <p>Submission successful</p>
+            </div>
+            <button class="button" onclick="location.href = 'addOrder.php';" buttonType="primary" type="submit" name="submit">Add another order</button>
         </div>
-        <button class="button" onclick="location.href = 'addOrder.php';" buttonType="primary" type="submit"
-            name="submit">Add another order</button>
     </dialog>
 
     <!-- Error dialog -->
