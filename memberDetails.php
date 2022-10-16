@@ -113,7 +113,7 @@
                                         <td>{$row['transaction_id']}</td>
                                         <td>{$row['date_purchased']}</td>
                                         <td>\${$row['totalPrice']}</td>
-                                        <td><a class='genericLink' href='orderHistory.php?transaction_id={$row['transaction_id']}'>View</a></td>
+                                        <td><a class='genericLink' href='orderSummary.php?transaction_id={$row['transaction_id']}'>View</a></td>
                                     </tr>\n";
                                 }
                             echo
