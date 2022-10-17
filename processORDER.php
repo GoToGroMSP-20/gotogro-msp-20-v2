@@ -39,7 +39,7 @@ if (isset($_POST["submit"])) {
             // checks if the execution was successful
             if (!$row) {
                 echo "<p class='manage_error'>Something is wrong with ", $query, "</p>";
-                header("location: addOrder.php?Username=invalid_member_id");
+                header("location: addOrder.php?order=invalid_member_id");
                 exit();
             } else {
                 $query = "INSERT INTO Transaction (member_id, date_purchased) VALUES('$memberId','$date');";
@@ -65,6 +65,30 @@ if (isset($_POST["submit"])) {
                         $product_ID2 = sanitise_input($_POST["product_ID2"]);
                         $quantity2 = sanitise_input($_POST["quantity2"]);
                         $query = "INSERT INTO TransactionOrder (transaction_id, product_id, quantity ) VALUES('$last_id','$product_ID2', '$quantity2');";
+                        $insert_result = mysqli_query($conn, $query);
+                        // checks if the execution was successful
+                        if (!$insert_result) {
+                            echo "<p>Something is wrong with ", $query, "</p>";
+                            header("location: addOrder.php?order=invalid_query");
+                            exit();
+                        }
+                    }
+                    if (isset($_POST["quantity3"]) && !empty($_POST["quantity3"])) {
+                        $product_ID3 = sanitise_input($_POST["product_ID3"]);
+                        $quantity3 = sanitise_input($_POST["quantity3"]);
+                        $query = "INSERT INTO TransactionOrder (transaction_id, product_id, quantity ) VALUES('$last_id','$product_ID3', '$quantity3');";
+                        $insert_result = mysqli_query($conn, $query);
+                        // checks if the execution was successful
+                        if (!$insert_result) {
+                            echo "<p>Something is wrong with ", $query, "</p>";
+                            header("location: addOrder.php?order=invalid_query");
+                            exit();
+                        }
+                    }
+                    if (isset($_POST["quantity4"]) && !empty($_POST["quantity4"])) {
+                        $product_ID4 = sanitise_input($_POST["product_ID4"]);
+                        $quantity4 = sanitise_input($_POST["quantity4"]);
+                        $query = "INSERT INTO TransactionOrder (transaction_id, product_id, quantity ) VALUES('$last_id','$product_ID4', '$quantity4');";
                         $insert_result = mysqli_query($conn, $query);
                         // checks if the execution was successful
                         if (!$insert_result) {

@@ -1,0 +1,26 @@
+.memberDetailsform {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.memberDetailsContainer {
+  display: flex;
+  gap: 4.5rem;
+}
+
+.memberDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.memberDetailsDialogButtons {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1.5rem;
+}
+
+.memberDetailsform h1 {
+  padding-top: 2rem;
+}
