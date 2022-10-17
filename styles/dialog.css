@@ -27,6 +27,11 @@ dialog.error path {
   fill: var(--clr-error);
 }
 
+
+dialog.delete path {
+  fill: var(--clr-warning);
+}
+
 .popup-status {
   display: flex;
   flex-direction: column;
@@ -44,4 +49,3 @@ dialog.error path {
 .popup-status > button {
   align-self: center;
 }
-
