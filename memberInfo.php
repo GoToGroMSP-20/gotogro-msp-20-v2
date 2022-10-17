@@ -34,10 +34,10 @@
         <dialog class="error" id="error">
             <div class="popup-status">
                 <?php echo file_get_contents("./assets/icons/FaTimesCircle.svg"); ?>
-                <p>Oops! Something broke from our end. Please contact our technicians for support (Error code: 500)</p>
+                <p>Oops! Member not found</p>
             </div>
             <button class="button" onclick="location.href = 'memberinfo.php';" buttonType="primary" type="submit"
-                name="submit">Back to Search Member</button>
+                name="submit">Search another Member</button>
         </dialog>
     </div>
 </body>
