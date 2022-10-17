@@ -96,7 +96,7 @@
                     exit();
                 } else {
                     $member_id = $_GET["member_id"];
-                    $user_query = "SELECT t.transaction_id, (SUM(o.quantity) * p.price) AS totalPrice, t.date_purchased
+                    $user_query = "SELECT t.transaction_id, SUM(o.quantity * p.price) AS totalPrice, t.date_purchased
                                     FROM product p
                                     INNER JOIN transactionorder o
                                     ON p.product_id = o.product_id
