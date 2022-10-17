@@ -76,8 +76,8 @@
                     <?php echo file_get_contents("./assets/icons/AiFillExclamationCircle.svg"); ?>
                     <p>Are you sure? Deleted member data will not be recoverable.</p>
                     <div class="deleteButtons">
-                        <?php echo "<button class='button' onclick=\"location.href = 'memberDetails.php?member_id={$row['member_id']}';\" buttonType='primary' type='button'name='submit'>Cancel</button>" ?>
-                        <?php echo "<button class='button' onclick=\"location.href = 'deleteMEMBER.php?member_id={$row['member_id']}';\" buttonType='error' type='button' name='dangerbutton' id='dangerbutton'>Delete Member</button>" ?>
+                        <?php echo "<button class='button' onclick=\"window.history.go(-1); return false;\" buttonType='primary' type='button'name='submit'>Cancel</button>" ?>
+                        <?php echo "<button class='button' onclick=\"location.href = 'deleteMember.php?member_id={$row['member_id']}';\" buttonType='error' type='button' name='dangerbutton' id='dangerbutton'>Delete</button>" ?>
                     </div>
                 </div>
             </dialog>
