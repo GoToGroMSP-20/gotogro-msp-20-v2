@@ -18,7 +18,7 @@
         <div class="popup-status">
             <?php echo file_get_contents("./assets/icons/FaCheckCircle.svg"); ?>
             <p>Submission successful</p>
-            <button class="button" onclick="location.href = 'orderSummary.php';" buttonType="primary" type="submit" name="submit">Back to Order Summary</button>
+            <button class="button" onclick="window.history.go(-2); return false;" buttonType="primary" type="submit" name="submit">Back to Order Summary</button>
         </div>
     </dialog>
 
