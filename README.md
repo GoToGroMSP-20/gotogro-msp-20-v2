@@ -32,7 +32,7 @@
 
 # First time setup
 ```
-git clone https://github.com/Baavi/DataVisualisation.git
+git clone https://github.com/GoToGroMSP-20/gotogro-msp-20-v2.git
 ```
 
 # Flow of developing a ticket
